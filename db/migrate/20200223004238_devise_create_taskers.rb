@@ -16,6 +16,7 @@ class DeviseCreateTaskers < ActiveRecord::Migration[5.2]
       t.string :zip_code
       t.float :hourly_rate
       t.text :introduction
+      t.string :auth_token
 
       ## Recoverable
       t.string   :reset_password_token

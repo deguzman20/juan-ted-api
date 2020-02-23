@@ -14,6 +14,7 @@ class DeviseCreateCustomers < ActiveRecord::Migration[5.2]
       t.string :mobile_number
       t.string :zip_code
       t.string :card_detail
+      t.string :auth_token
 
       ## Recoverable
       t.string   :reset_password_token
