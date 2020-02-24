@@ -3,8 +3,8 @@
 # Table name: reviews
 #
 #  id          :bigint           not null, primary key
-#  comments    :text(65535)
-#  ratings     :float(24)
+#  comments    :text
+#  ratings     :float
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
 #  customer_id :integer

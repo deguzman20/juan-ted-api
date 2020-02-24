@@ -51,7 +51,7 @@ Metrics/ClassLength:
 # Offense count: 219
 # Configuration parameters: CountComments, ExcludedMethods.
 Metrics/MethodLength:
-  Max: 25
+  Max: 30
   Exclude:
     - '**/*_spec.rb'
 

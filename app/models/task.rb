@@ -3,10 +3,10 @@
 # Table name: tasks
 #
 #  id                     :bigint           not null, primary key
-#  approved               :boolean          default("0")
-#  end_location_address   :string(255)
-#  start_location_address :string(255)
-#  task_completed         :boolean          default("0")
+#  approved               :boolean          default("false")
+#  end_location_address   :string
+#  start_location_address :string
+#  task_completed         :boolean          default("false")
 #  created_at             :datetime         not null
 #  updated_at             :datetime         not null
 #  customer_id            :integer

@@ -12,7 +12,10 @@
 
 ActiveRecord::Schema.define(version: 2020_02_23_015814) do
 
-  create_table "customers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
+  create_table "customers", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "first_name"
@@ -21,6 +24,7 @@ ActiveRecord::Schema.define(version: 2020_02_23_015814) do
     t.string "mobile_number"
     t.string "zip_code"
     t.string "card_detail"
+    t.string "auth_token"
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
@@ -30,20 +34,20 @@ ActiveRecord::Schema.define(version: 2020_02_23_015814) do
     t.index ["reset_password_token"], name: "index_customers_on_reset_password_token", unique: true
   end
 
-  create_table "estimated_tasks", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "estimated_tasks", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "featured_skills", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "featured_skills", force: :cascade do |t|
     t.integer "service_id"
     t.integer "tasker_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "reviews", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "reviews", force: :cascade do |t|
     t.float "ratings"
     t.text "comments"
     t.integer "customer_id"
@@ -53,13 +57,13 @@ ActiveRecord::Schema.define(version: 2020_02_23_015814) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "services", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "services", force: :cascade do |t|
     t.string "type"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "taskers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "taskers", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "first_name"
@@ -69,6 +73,7 @@ ActiveRecord::Schema.define(version: 2020_02_23_015814) do
     t.string "zip_code"
     t.float "hourly_rate"
     t.text "introduction"
+    t.string "auth_token"
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
@@ -78,7 +83,7 @@ ActiveRecord::Schema.define(version: 2020_02_23_015814) do
     t.index ["reset_password_token"], name: "index_taskers_on_reset_password_token", unique: true
   end
 
-  create_table "tasks", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "tasks", force: :cascade do |t|
     t.integer "tasker_id"
     t.integer "customer_id"
     t.integer "estimated_task_id"
