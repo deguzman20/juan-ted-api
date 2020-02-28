@@ -5,7 +5,7 @@ module Mutations
 
     # base input object for email and password
     class CustomerAuthProviderSignupData < Types::BaseInputObject
-      argument :email, Types::AuthProviderEmailInput, required: false
+      argument :email, Types::AuthProviderEmailInput, required: true
     end
 
     # Personal Information
@@ -13,8 +13,6 @@ module Mutations
     argument :last_name, String, required: true
     argument :image, String, required: false
     argument :mobile_number, String, required: true
-    argument :zip_code, String, required: true
-    argument :card_detail, String, required: true
 
     argument :auth_provider, CustomerAuthProviderSignupData, required: false
     # argument :user_type, Types::UserEnum, required: false
@@ -27,10 +25,7 @@ module Mutations
         password: auth_provider&.[](:email)&.[](:password),
         first_name: args[:first_name],
         last_name: args[:last_name],
-        image: args[:image],
-        mobile_number: args[:mobile_number],
-        zip_code: args[:zip_code],
-        card_detail: args[:card_detail]
+        mobile_number: args[:mobile_number]
       )
       if customer.save
         { response: "Customer Created", status_code: 200 }

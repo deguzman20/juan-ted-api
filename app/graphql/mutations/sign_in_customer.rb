@@ -5,10 +5,9 @@ module Mutations
     argument :email, Types::AuthProviderEmailInput, required: false
     field :token, String, null: true
     field :email, String, null: true
-    # field :password, String, null: true
 
     def resolve(email: nil)
-      token = CustomerAuthenticationService.new(email[:email], email[:password]).call
+      token = CustomerAuthenticationService.call(email[:email], email[:password])
       { token: token }
     end
   end

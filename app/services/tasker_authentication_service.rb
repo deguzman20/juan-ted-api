@@ -1,5 +1,6 @@
-class TaskerAuthenticationService
+class TaskerAuthenticationService < ApplicationService
   attr_accessor :email, :password
+
   def initialize(email, password)
     @email = email
     @password = password

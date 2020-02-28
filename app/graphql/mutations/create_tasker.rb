@@ -14,11 +14,11 @@ module Mutations
     argument :image, String, required: false
     argument :mobile_number, String, required: true
     argument :zip_code, String, required: true
-    argument :hourly_rate, String, required: true
-    argument :introduction, String, required: true
+    argument :hourly_rate, Float, required: false
+    argument :introduction, String, required: false
 
     argument :auth_provider, TaskerAuthProviderSignupData, required: false
-    # argument :user_type, Types::UserEnum, required: false
+
     field :response, String, null: true
     field :status_code, Integer, null: false
     # type Types::UserType

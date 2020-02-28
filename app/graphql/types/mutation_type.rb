@@ -5,5 +5,6 @@ module Types
     field :create_customer, mutation: Mutations::CreateCustomer
     field :customer_signin, mutation: Mutations::SignInCustomer
     field :tasker_signin, mutation: Mutations::SignInTasker
+    field :forgot_password, mutation: Mutations::ForgotPassword
   end
 end

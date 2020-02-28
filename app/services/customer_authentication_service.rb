@@ -1,4 +1,4 @@
-class CustomerAuthenticationService
+class CustomerAuthenticationService < ApplicationService
   attr_accessor :email, :password
   def initialize(email, password)
     @email = email
@@ -34,7 +34,7 @@ class CustomerAuthenticationService
         when "expired_token"
           token = JsonWebToken.encode(customer_id: customer.id)
           get_customer.auth_token = token
-          get_cutomer.save!
+          get_customer.save!
           JsonWebToken.decode(token)
           get_customer.auth_token
         when "decode_error"
