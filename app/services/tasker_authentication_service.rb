@@ -28,7 +28,7 @@ class TaskerAuthenticationService < ApplicationService
         get_tasker.auth_token = token
         get_tasker.save!
         JsonWebToken.decode(token)
-        get_tasker.auth_token
+        get_tasker
       else
         token = get_tasker.auth_token
         case JsonWebToken.decode(token)
@@ -37,13 +37,12 @@ class TaskerAuthenticationService < ApplicationService
           get_tasker.auth_token = token
           get_cutomer.save!
           JsonWebToken.decode(token)
-          get_tasker.auth_token
+          get_tasker
         when "decode_error"
           "decode_error"
         else
-          get_tasker.auth_token
+          get_tasker
         end
       end
-      # end
     end
 end

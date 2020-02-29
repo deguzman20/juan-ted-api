@@ -4,7 +4,7 @@ module Types
     description "Task Type"
     graphql_name "TASK_TYPE"
     field :id, ID, null: false
-    field :tasker, Types::TaskerType, null: false
+    field :tasker, Types::TaskerType, null: true
     field :customer, Types::CustomerType, null: false
     field :start_location_address, String, null: false
     field :end_location_address, String, null: false
