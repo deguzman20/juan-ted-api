@@ -2,7 +2,6 @@ module Types
   # query object for user
   class TaskType < BaseObject
     description "Task Type"
-    graphql_name "TASK_TYPE"
     field :id, ID, null: false
     field :tasker, Types::TaskerType, null: true
     field :customer, Types::CustomerType, null: false
