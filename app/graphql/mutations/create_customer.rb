@@ -15,10 +15,8 @@ module Mutations
     argument :mobile_number, String, required: true
 
     argument :auth_provider, CustomerAuthProviderSignupData, required: false
-    # argument :user_type, Types::UserEnum, required: false
     field :response, String, null: true
     field :status_code, Integer, null: false
-    # type Types::UserType
     def resolve(auth_provider: nil, ** args)
       customer = Customer.new(
         email: auth_provider&.[](:email)&.[](:email),

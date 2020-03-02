@@ -1,6 +1,6 @@
 module Mutations
   # mutation for creating new user
-  class CustomerChangePassword < BaseMutation
+  class ChangePassword < BaseMutation
     description "Forgot Password"
 
     argument :id, Integer, required: true

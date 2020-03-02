@@ -6,6 +6,6 @@ module Types
     field :customer_signin, mutation: Mutations::SignInCustomer
     field :tasker_signin, mutation: Mutations::SignInTasker
     field :forgot_password, mutation: Mutations::ForgotPassword
-    field :update_password, mutation: Mutations::CustomerChangePassword
+    field :update_password, mutation: Mutations::ChangePassword
   end
 end

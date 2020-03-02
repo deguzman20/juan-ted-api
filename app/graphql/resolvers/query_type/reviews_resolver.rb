@@ -1,7 +1,7 @@
 module Resolvers
   module QueryType
     class ReviewsResolver < GraphQL::Schema::Resolver
-      description "List of all tasker"
+      description "List of all reviews"
 
       type [Types::ReviewType], null: false
 

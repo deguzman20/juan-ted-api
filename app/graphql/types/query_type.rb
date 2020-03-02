@@ -8,5 +8,6 @@ module Types
     field :tasker, resolver: Resolvers::QueryType::TaskerResolver
     field :all_customers, resolver: Resolvers::QueryType::CustomersResolver
     field :all_taskers, resolver: Resolvers::QueryType::TaskersResolver
+    field :all_reviews, resolver: Resolvers::QueryType::ReviewsResolver
   end
 end
