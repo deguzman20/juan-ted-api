@@ -12,5 +12,6 @@ module Types
     field :card_detail, String, null: false
     field :email, String, null: false
     field :tasks, [Types::TaskType], null: true
+    field :reviews, [Types::ReviewType], null: true
   end
 end
