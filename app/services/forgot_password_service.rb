@@ -14,6 +14,7 @@ class ForgotPasswordService < ApplicationService
     def forgot_password
       @customer = Customer.find_by_email(email)
       return nil unless @customer.present?
+
       puts ForgotPasswordMailer.forgot_password(@customer).deliver!
     end
 end
