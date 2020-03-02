@@ -3,12 +3,12 @@ module Mutations
   class SignInTasker < BaseMutation
     description "Sign-in Authentication for tasker"
     argument :email, Types::AuthProviderEmailInput, required: false
-    field :token, String, null: true
+    field :response, Types::TaskerType, null: true
     field :email, String, null: true
 
     def resolve(email: nil)
-      token = TaskerAuthenticationService.call(email[:email], email[:password])
-      { token: token }
+      tasker = TaskerAuthenticationService.call(email[:email], email[:password])
+      { response: tasker }
     end
   end
 end
