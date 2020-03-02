@@ -48,8 +48,8 @@ ActiveRecord::Schema.define(version: 2020_02_23_015814) do
   end
 
   create_table "reviews", force: :cascade do |t|
-    t.float "ratings"
-    t.text "comments"
+    t.float "rating"
+    t.text "comment"
     t.integer "customer_id"
     t.integer "tasker_id"
     t.integer "service_id"
