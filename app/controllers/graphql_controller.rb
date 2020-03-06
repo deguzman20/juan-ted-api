@@ -10,10 +10,7 @@ class GraphqlController < ApplicationController
     variables = ensure_hash(params[:variables])
     query = params[:query]
     operation_name = params[:operationName]
-    context = {
-      # Query context goes here, for example:
-      # current_user: current_user,
-    }
+    context = generate_context
     result = JuanTedApiSchema.execute(query, variables: variables, context: context, operation_name: operation_name)
     render json: result
   rescue StandardError => e
@@ -47,5 +44,15 @@ class GraphqlController < ApplicationController
       logger.error err.backtrace.join("\n")
 
       render json: { error: { message: err.message, backtrace: err.backtrace }, data: {} }, status: 500
+    end
+
+    def generate_context
+      context = { current_user: set_current_user,
+                  token: request.headers[:authorization] }
+    end
+
+    def set_current_user
+      token = request.headers["Authorization"]
+      AuthorizeApiRequest.call(request.headers).result if token.present?
     end
 end

@@ -15,10 +15,14 @@ module Mutations
     def resolve(_email: nil, **args)
       customer_change_password = ChangePasswordService.call(args[:id], args[:new_password],
                                                             args[:confirm_password], args[:customer])
-      if customer_change_password.present?
-        { response: customer_change_password, status_code: 200 }
+      if context[:current_user].present?
+        if customer_change_password.present?
+          { response: customer_change_password, status_code: 200 }
+        else
+          { response: "Password and confirm password doesn't match", status_code: 422 }
+        end
       else
-        { response: "Password and confirm password doesn't match", status_code: 422 }
+        { response: "Unauthorized", status_code: 401 }
       end
     end
   end
