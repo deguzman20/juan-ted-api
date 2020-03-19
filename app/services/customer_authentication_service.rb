@@ -27,7 +27,7 @@ class CustomerAuthenticationService < ApplicationService
         get_customer.auth_token = token
         get_customer.save!
         JsonWebToken.decode(token)
-        get_customer
+        get_customer.auth_token
       else
         token = get_customer.auth_token
         case JsonWebToken.decode(token)
@@ -36,11 +36,11 @@ class CustomerAuthenticationService < ApplicationService
           get_customer.auth_token = token
           get_customer.save!
           JsonWebToken.decode(token)
-          get_customer
+          get_customer.auth_token
         when "decode_error"
           "decode_error"
         else
-          get_customer
+          get_customer.auth_token
         end
       end
       # end

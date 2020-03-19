@@ -29,6 +29,8 @@ class Customer < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
+  has_many :todos
+
   has_many :tasks
   has_many :taskers, through: :tasks
 

@@ -7,5 +7,6 @@ module Types
     field :tasker_signin, mutation: Mutations::SignInTasker
     field :forgot_password, mutation: Mutations::ForgotPassword
     field :update_password, mutation: Mutations::ChangePassword
+    field :create_todo, mutation: Mutations::CreateTodo
   end
 end

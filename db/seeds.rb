@@ -25,15 +25,20 @@ password = 'pass12345'
     introduction: "lorem ipsum dolor"
   )
 
-  estimated_task = EstimatedTask.create([
+  service = Service.create([
     { name: "Small" },
     { name: "Medium" },
     { name: "Large" }])
 
-  if customer.save && tasker.save && estimated_task
-    Task.create(tasker_id: rand(1..Tasker.all.count) , 
-        customer_id: rand(1..Customer.all.count), 
-        estimated_task_id: rand(1..EstimatedTask.all.count),
+  if service
+    1.upto(100) do |a|
+      keyword = Keyword.create(keyword: Faker::Superhero.name, service_id: rand(1..Service.all.count))
+    end
+  end
+
+  if customer.save && tasker.save
+    Task.create(tasker_id: rand(1..Tasker.all.count) ,
+        customer_id: rand(1..Customer.all.count),
         start_location_address: Faker::Address.street_address,
         end_location_address: Faker::Address.secondary_address,
         approved: rand(0..1),

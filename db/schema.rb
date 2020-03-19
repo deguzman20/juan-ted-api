@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_23_015814) do
+ActiveRecord::Schema.define(version: 2020_03_09_014510) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -34,15 +34,16 @@ ActiveRecord::Schema.define(version: 2020_02_23_015814) do
     t.index ["reset_password_token"], name: "index_customers_on_reset_password_token", unique: true
   end
 
-  create_table "estimated_tasks", force: :cascade do |t|
-    t.string "name"
+  create_table "featured_skills", force: :cascade do |t|
+    t.integer "service_id"
+    t.integer "tasker_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "featured_skills", force: :cascade do |t|
+  create_table "keywords", force: :cascade do |t|
     t.integer "service_id"
-    t.integer "tasker_id"
+    t.string "keyword"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -58,7 +59,8 @@ ActiveRecord::Schema.define(version: 2020_02_23_015814) do
   end
 
   create_table "services", force: :cascade do |t|
-    t.string "type"
+    t.string "name"
+    t.float "price"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -86,11 +88,25 @@ ActiveRecord::Schema.define(version: 2020_02_23_015814) do
   create_table "tasks", force: :cascade do |t|
     t.integer "tasker_id"
     t.integer "customer_id"
-    t.integer "estimated_task_id"
     t.string "start_location_address"
     t.string "end_location_address"
+    t.string "street_address"
+    t.string "unit_or_apt_no"
     t.boolean "approved", default: false
     t.boolean "task_completed", default: false
+    t.float "latitude"
+    t.float "longitude"
+    t.datetime "date_of_shedule"
+    t.integer "number_of_hours"
+    t.boolean "status", default: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "todos", force: :cascade do |t|
+    t.integer "service_id"
+    t.integer "customer_id"
+    t.string "todo_description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

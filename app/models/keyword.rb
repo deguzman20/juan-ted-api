@@ -1,14 +1,13 @@
 # == Schema Information
 #
-# Table name: estimated_tasks
+# Table name: keywords
 #
 #  id         :bigint           not null, primary key
-#  name       :string
+#  keyword    :string
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
+#  service_id :integer
 #
-FactoryBot.define do
-  factory :estimated_task do
-    type { "" }
-  end
+class Keyword < ApplicationRecord
+  belongs_to :service
 end

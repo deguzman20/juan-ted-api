@@ -47,8 +47,8 @@ class GraphqlController < ApplicationController
     end
 
     def generate_context
-      context = { current_user: set_current_user,
-                  token: request.headers[:authorization] }
+      { current_user: set_current_user,
+        token: request.headers[:authorization] }
     end
 
     def set_current_user

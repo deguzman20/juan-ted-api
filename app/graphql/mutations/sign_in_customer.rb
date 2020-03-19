@@ -3,13 +3,12 @@ module Mutations
   class SignInCustomer < BaseMutation
     description "Sign-in Authentication for customer"
     argument :email, Types::AuthProviderEmailInput, required: false
-    field :response, Types::CustomerType, null: true
-    # field :token, String, null: true
+    field :token, String, null: true
     field :email, String, null: true
 
     def resolve(email: nil)
-      customer = CustomerAuthenticationService.call(email[:email], email[:password])
-      { response: customer }
+      auth_token = CustomerAuthenticationService.call(email[:email], email[:password])
+      { token: auth_token }
     end
   end
 end
