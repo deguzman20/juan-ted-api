@@ -2,7 +2,7 @@ class ChangePasswordService < ApplicationService
   attr_accessor :id, :old_password, :new_password, :confirm_password, :is_customer
 
   def initialize(id, new_password, confirm_password, is_customer)
-    @id = id
+    @id = id.to_i
     @new_password = new_password
     @confirm_password = confirm_password
     @is_customer = is_customer
@@ -16,13 +16,13 @@ class ChangePasswordService < ApplicationService
 
     def update_password
       if @is_customer
-        customer = Customer.find(@id.to_i)
+        customer = Customer.find(id)
         if new_password == confirm_password
           customer.password = new_password
           "Password Successfuly updated!" if customer.save
         end
       else
-        tasker = Tasker.find(@id.to_i)
+        tasker = Tasker.find(id)
         if new_password == confirm_password
           tasker.password = new_password
           "Password Successfuly updated!" if tasker.save
