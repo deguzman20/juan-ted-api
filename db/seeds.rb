@@ -1,4 +1,21 @@
 password = 'pass12345'
+
+images = [
+  Rails.root + 'app/assets/images/cleaning.jpeg',
+  Rails.root + 'app/assets/images/furniture_assembly.jpeg',
+  Rails.root + 'app/assets/images/home_repair.jpg',
+  Rails.root + 'app/assets/images/mounting.jpg',
+  Rails.root + 'app/assets/images/moving-boxes-crosscountry.jpg'
+]
+
+@service = Service.create([
+  { name: "Cleaning", price: 100.00, image:  File.open(images[0]) },
+  { name: "Furniture Assembly", price: 100.00, image: File.open(images[1]) },
+  { name: "Home Repair", price: 100.00, image: File.open(images[2]) },
+  { name: "Mounting", price: 50.00, image: File.open(images[3]) },
+  { name: "Moving", price: 50.00, image: File.open(images[4]) }
+])
+
 1.upto(5) do |i|
   customer = Customer.new(
     first_name: Faker::Name.first_name,
@@ -25,12 +42,7 @@ password = 'pass12345'
     introduction: "lorem ipsum dolor"
   )
 
-  service = Service.create([
-    { name: "Small" },
-    { name: "Medium" },
-    { name: "Large" }])
-
-  if service
+  if @service
     1.upto(100) do |a|
       keyword = Keyword.create(keyword: Faker::Superhero.name, service_id: rand(1..Service.all.count))
     end

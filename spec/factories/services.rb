@@ -3,6 +3,7 @@
 # Table name: services
 #
 #  id         :bigint           not null, primary key
+#  image      :string
 #  name       :string
 #  price      :float
 #  created_at :datetime         not null

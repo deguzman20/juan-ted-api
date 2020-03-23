@@ -13,6 +13,7 @@ module Types
     field :zip_code, String, null: false
     field :hourly_rate, Float, null: false
     field :introduction, String, null: false
+    field :auth_token, String, null: false
     field :tasks, [Types::TaskType], null: true
   end
 end

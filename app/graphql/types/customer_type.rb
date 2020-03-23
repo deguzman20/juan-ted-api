@@ -11,6 +11,7 @@ module Types
     field :zip_code, String, null: false
     field :card_detail, String, null: false
     field :email, String, null: false
+    field :auth_token, String, null: false
     field :tasks, [Types::TaskType], null: true
     field :reviews, [Types::ReviewType], null: true
   end

@@ -53,6 +53,6 @@ class GraphqlController < ApplicationController
 
     def set_current_user
       token = request.headers["Authorization"]
-      AuthorizeApiRequest.call(request.headers).result if token.present?
+      # AuthorizeApiRequest.call(request.headers).result if token.present?
     end
 end
