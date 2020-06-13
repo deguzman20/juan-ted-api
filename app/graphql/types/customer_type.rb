@@ -14,5 +14,6 @@ module Types
     field :auth_token, String, null: false
     field :tasks, [Types::TaskType], null: true
     field :reviews, [Types::ReviewType], null: true
+    field :todos, [Types::TodoType], null: true
   end
 end
