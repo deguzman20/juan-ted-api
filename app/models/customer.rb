@@ -36,4 +36,7 @@ class Customer < ApplicationRecord
 
   has_many :reviews
   has_many :taskers, through: :reviews
+
+  has_many :conversations
+  has_many :taskers, through: :conversations
 end

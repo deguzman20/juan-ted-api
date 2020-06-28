@@ -1,9 +1,9 @@
 module Resolvers
   module QueryType
     class CustomerResolver < GraphQL::Schema::Resolver
-      argument :id, Integer, required: true
       description "Single Customer"
-
+      argument :id, Integer, required: true
+    
       type [Types::CustomerType], null: false
 
       def resolve(** args)

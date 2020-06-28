@@ -1,15 +1,16 @@
 module Mutations
   # mutation for creating todo
-  class CreateTodo < BaseMutation
-    description "Create Task Todo list"
+  class DeleteTodo < BaseMutation
+    description "Delete Task Todo list"
     field :response, String, null: true
-    argument :customer_id, Integer, required: true
-    argument :todo_description, String, required: true
+    argument :todo_id, Integer, required: true
     type Types::TodoType
 
     def resolve(** args)
       # if context[:current_customer].present?
-        CreateTodoService.call(args[:todo_description], args[:customer_id])
+      todo = DeleteTodoService.call(args[:todo_id])
+
+      { resolve: todo }
       # else
       #   { response: "Unauthorized" }
       # end

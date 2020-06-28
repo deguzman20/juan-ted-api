@@ -38,4 +38,7 @@ class Tasker < ApplicationRecord
 
   has_many :reviews
   has_many :customers, through: :reviews
+
+  has_many :conversations
+  has_many :customers, through: :conversations
 end

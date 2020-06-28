@@ -15,5 +15,6 @@ module Types
     field :tasks, [Types::TaskType], null: true
     field :reviews, [Types::ReviewType], null: true
     field :todos, [Types::TodoType], null: true
+    field :conversations, [Types::ConversationType], null: true
   end
 end

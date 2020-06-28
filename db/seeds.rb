@@ -1,20 +1,25 @@
-password = 'pass12345'
 
 images = [
   Rails.root + 'app/assets/images/cleaning.jpeg',
   Rails.root + 'app/assets/images/furniture_assembly.jpeg',
   Rails.root + 'app/assets/images/home_repair.jpg',
   Rails.root + 'app/assets/images/mounting.jpg',
-  Rails.root + 'app/assets/images/moving-boxes-crosscountry.jpg'
+  Rails.root + 'app/assets/images/moving-boxes-crosscountry.jpg',
+  Rails.root + 'app/assets/images/laundry.jpg',
+  Rails.root + 'app/assets/images/nail_care.jpg'
 ]
 
 @service = Service.create([
   { name: "Cleaning", price: 100.00, image:  File.open(images[0]) },
-  { name: "Furniture Assembly", price: 100.00, image: File.open(images[1]) },
+  # { name: "Furniture Assembly", price: 100.00, image: File.open(images[1]) },
   { name: "Home Repair", price: 100.00, image: File.open(images[2]) },
-  { name: "Mounting", price: 50.00, image: File.open(images[3]) },
-  { name: "Moving", price: 50.00, image: File.open(images[4]) }
+  # { name: "Mounting", price: 50.00, image: File.open(images[3]) },
+  # { name: "Moving", price: 50.00, image: File.open(images[4]) }
+  { name: "Laundry", price: 100.00, image: File.open(images[5]) },
+  { name: "Nail Care", price: 100.00, image: File.open(images[6]) },
 ])
+
+@password = 'pass12345'
 
 1.upto(5) do |i|
   customer = Customer.new(
@@ -22,8 +27,8 @@ images = [
     last_name: Faker::Name.last_name,
     image: nil,
     email: "user-#{i}@example.com",
-    password: password,
-    password_confirmation: password,
+    password: @password,
+    password_confirmation: @password,
     mobile_number: "09495939582",
     zip_code: "1403",
     card_detail: "9127381273",
@@ -34,8 +39,8 @@ images = [
     last_name: Faker::Name.last_name,
     image: nil,
     email: "user-#{i}@example.com",
-    password: password,
-    password_confirmation: password,
+    password: @password,
+    password_confirmation: @password,
     mobile_number: "09495939582",
     zip_code: "1403",
     hourly_rate: 10.00,

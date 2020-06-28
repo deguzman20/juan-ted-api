@@ -15,5 +15,6 @@ module Types
     field :introduction, String, null: false
     field :auth_token, String, null: false
     field :tasks, [Types::TaskType], null: true
+    field :conversations, [Types::ConversationType], null: true
   end
 end

@@ -1,9 +1,9 @@
 class CreateTodoService < ApplicationService
-  attr_accessor :todo_description, :current_customer
+  attr_accessor :todo_description, :customer_id
 
-  def initialize(todo_description = nil, current_customer = nil)
+  def initialize(todo_description = nil, customer_id = nil)
     @todo_description = todo_description
-    @current_customer = current_customer
+    @customer_id = customer_id
   end
 
   def call
@@ -14,17 +14,19 @@ class CreateTodoService < ApplicationService
 
       def create_todo
         @keyword = nil
-
-        @result = Keyword.where('keyword IN (?)', "#{todo_description}")
+        @service_id = nil
+        
+        @result = Keyword.where('keyword IN (?)', todo_description.split(/\W+/))
 
         return unless @result.present?
+        @result.each { |r| @service_id = r.service_id }
+        
+        @todo = Todo.new(todo_description: todo_description,
+                  customer_id: customer_id,
+                  service_id: @service_id)
 
-        todo = Todo.new(todo_description: todo_description,
-                  customer_id: current_customer,
-                  service_id: @result.each { |r| r.service })
-
-        if todo.save
-          "Todo created"
+        if @todo.save
+           @todo 
         else
           "Failed to create todo"
         end
