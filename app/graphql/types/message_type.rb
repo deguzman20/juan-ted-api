@@ -5,6 +5,7 @@ module Types
     field :id, ID, null: true
     field :conversation_id, ID, null: true
     field :text, String, null: false
+    field :own_by_customer, Boolean, null: false
     field :created_at, String, null: false
   end
 end
