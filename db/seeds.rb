@@ -1,22 +1,65 @@
 
-images = [
-  Rails.root + 'app/assets/images/cleaning.jpeg',
-  Rails.root + 'app/assets/images/furniture_assembly.jpeg',
-  Rails.root + 'app/assets/images/home_repair.jpg',
-  Rails.root + 'app/assets/images/mounting.jpg',
-  Rails.root + 'app/assets/images/moving-boxes-crosscountry.jpg',
-  Rails.root + 'app/assets/images/laundry.jpg',
-  Rails.root + 'app/assets/images/nail_care.jpg'
+service_type_images = [
+  Rails.root + 'app/assets/images/service_types/cleaning.jpeg',
+  Rails.root + 'app/assets/images/service_types/home_repair.jpg',
+  Rails.root + 'app/assets/images/service_types/laundry.jpg',
+  Rails.root + 'app/assets/images/service_types/nail_care.jpg'
 ]
 
+service_images = [
+  Rails.root + 'app/assets/images/services/manicure.png',
+  Rails.root + 'app/assets/images/services/pedicure.png'
+]
+
+@service_type = ServiceType.create([
+  { 
+    name: "Cleaning", 
+    image:  File.open(service_type_images[0]) 
+  },
+  { 
+    name: "Home Repair", 
+    image: File.open(service_type_images[1]) 
+  },
+  { 
+    name: "Laundry", 
+    image: File.open(service_type_images[2]) 
+  },
+  { 
+    name: "Nail Care", 
+    image: File.open(service_type_images[3]) 
+  }
+])
+
 @service = Service.create([
-  { name: "Cleaning", price: 100.00, image:  File.open(images[0]) },
-  # { name: "Furniture Assembly", price: 100.00, image: File.open(images[1]) },
-  { name: "Home Repair", price: 100.00, image: File.open(images[2]) },
-  # { name: "Mounting", price: 50.00, image: File.open(images[3]) },
-  # { name: "Moving", price: 50.00, image: File.open(images[4]) }
-  { name: "Laundry", price: 100.00, image: File.open(images[5]) },
-  { name: "Nail Care", price: 100.00, image: File.open(images[6]) },
+  { 
+    name: "Manicure", 
+    description: "Manicure sample description",
+    price: 200.00, 
+    image: File.open(service_images[0]),
+    service_type_id: 4
+  },
+  { 
+    name: "Pedicure", 
+    description: "Pedicure sample description",
+    price: 150.00, 
+    image: File.open(service_images[1]),
+    service_type_id: 4
+  },
+  { 
+    name: "0-4 Kilos", 
+    price: 150.00, 
+    service_type_id: 3
+  },
+  { 
+    name: "5-8 Kilos", 
+    price: 200.00, 
+    service_type_id: 3
+  },
+  { 
+    name: "9-12 Kilos", 
+    price: 350.00, 
+    service_type_id: 3
+  }
 ])
 
 @password = 'pass12345'
@@ -26,7 +69,7 @@ images = [
     first_name: Faker::Name.first_name,
     last_name: Faker::Name.last_name,
     image: nil,
-    email: "user-#{i}@example.com",
+    email: "customer-#{i}@example.com",
     password: @password,
     password_confirmation: @password,
     mobile_number: "09495939582",
@@ -38,13 +81,15 @@ images = [
     first_name: Faker::Name.first_name,
     last_name: Faker::Name.last_name,
     image: nil,
-    email: "user-#{i}@example.com",
+    email: "tasker-#{i}@example.com",
     password: @password,
     password_confirmation: @password,
     mobile_number: "09495939582",
     zip_code: "1403",
     hourly_rate: 10.00,
-    introduction: "lorem ipsum dolor"
+    introduction: "lorem ipsum dolor",
+    lng: 121.005239,
+    lat: 14.6649003
   )
 
   if @service

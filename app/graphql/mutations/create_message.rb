@@ -13,16 +13,16 @@ module Mutations
       @conversation = Conversation.where(customer_id: customer_id)
                                   .where(tasker_id: tasker_id)
       if @conversation.present?
-        @conversation.select { |conversation| @conversation_id = conversation.id  }
+        @conversation.select { |conversation| @conversation_id = conversation.id }
       else
-        conversation = Conversation.create(customer_id: customer_id, 
-                                            tasker_id: tasker_id)
+        conversation = Conversation.create(customer_id: customer_id,
+                                           tasker_id: tasker_id)
         @conversation_id = conversation.id
       end
-      
+
       repo = MessageRepository.new
-      @message = repo.create_in_room(conversation_id: @conversation_id, 
-                                      text: text, own_by_customer: own_by_customer)
+      @message = repo.create_in_room(conversation_id: @conversation_id,
+                                     text: text, own_by_customer: own_by_customer)
       { message: @message }
     end
   end

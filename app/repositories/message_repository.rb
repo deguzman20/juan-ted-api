@@ -20,4 +20,3 @@ class MessageRepository
     end
   end
 end
-

@@ -9,7 +9,7 @@ module Types
     end
 
     def message_added_to_conversation(conversation_id:)
-     object
+      object
     end
 
     # extend GraphQL::Subscriptions::SubscriptionRoot

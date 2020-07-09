@@ -2,18 +2,22 @@
 #
 # Table name: services
 #
-#  id         :bigint           not null, primary key
-#  image      :string
-#  name       :string
-#  price      :float
-#  created_at :datetime         not null
-#  updated_at :datetime         not null
+#  id              :bigint           not null, primary key
+#  description     :text(65535)
+#  image           :string(255)
+#  name            :string(255)
+#  price           :float(24)
+#  created_at      :datetime         not null
+#  updated_at      :datetime         not null
+#  service_type_id :integer
 #
 class Service < ApplicationRecord
-  has_many :featured_skills
-  has_many :taskers, through: :featured_skills
-  has_many :reviews
-  has_many :keywords
+  belongs_to :service_type, optional: true
 
+  has_many :reviews, dependent: :destroy
+  has_many :keywords, dependent: :destroy
+
+  has_many :transaction_services
+  has_many :transactions, through: :transaction_services
   mount_uploader :image, OfferUploader
 end

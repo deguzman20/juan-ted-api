@@ -3,7 +3,7 @@ module Resolvers
     class CustomerResolver < GraphQL::Schema::Resolver
       description "Single Customer"
       argument :id, Integer, required: true
-    
+
       type [Types::CustomerType], null: false
 
       def resolve(** args)

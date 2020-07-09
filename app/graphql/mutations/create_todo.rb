@@ -9,7 +9,7 @@ module Mutations
 
     def resolve(** args)
       # if context[:current_customer].present?
-        CreateTodoService.call(args[:todo_description], args[:customer_id])
+      CreateTodoService.call(args[:todo_description], args[:customer_id])
       # else
       #   { response: "Unauthorized" }
       # end

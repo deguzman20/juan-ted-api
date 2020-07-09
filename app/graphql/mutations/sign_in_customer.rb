@@ -6,7 +6,6 @@ module Mutations
     field :email, String, null: true
     type Types::CustomerType
 
-
     def resolve(email: nil)
       CustomerAuthenticationService.call(email[:email], email[:password])
     end

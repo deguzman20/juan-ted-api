@@ -6,4 +6,4 @@ module Types
     field :todo_description, String, null: true
     field :service, Types::ServiceType, null: true
   end
-end 
+end
