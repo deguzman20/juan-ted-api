@@ -15,7 +15,7 @@ module Resolvers
         unless args.nil?
           if Transaction.count >=1
             Tasker.find_by_sql("SELECT taskers.id, taskers.first_name, taskers.last_name, taskers.email, taskers.lat, taskers.lng,
-              ((ACOS(SIN(#{args[:lat].to_d} * PI() / 180)
+              taskers.image, ((ACOS(SIN(#{args[:lat].to_d} * PI() / 180)
               * SIN(taskers.lat * PI() / 180) + COS(#{args[:lat].to_d} * PI() / 180) 
               * COS(taskers.lat * PI() / 180)
               * COS((#{args[:lng].to_d} - taskers.lng) * PI() / 180)) * 180 / PI()) * 60 * 1.1515)
@@ -31,7 +31,7 @@ module Resolvers
             )
           else
             Tasker.find_by_sql("SELECT taskers.id, taskers.first_name, taskers.last_name, taskers.email, taskers.lat, taskers.lng,
-              ((ACOS(SIN(#{args[:lat].to_d} * PI() / 180)
+              taskers.image, ((ACOS(SIN(#{args[:lat].to_d} * PI() / 180)
               * SIN(taskers.lat * PI() / 180) + COS(#{args[:lat].to_d} * PI() / 180) 
               * COS(taskers.lat * PI() / 180)
               * COS((#{args[:lng].to_d} - taskers.lng) * PI() / 180)) * 180 / PI()) * 60 * 1.1515)
