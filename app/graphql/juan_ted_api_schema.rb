@@ -3,7 +3,7 @@ class JuanTedApiSchema < GraphQL::Schema
   query(Types::QueryType)
 
   use GraphQL::Subscriptions::ActionCableSubscriptions, redis: Redis.new
-  subscription(Types::SubscriptionType)
+  # subscription(Types::SubscriptionType)
 
   # use GraphQL::Execution::Interpreter
   # use GraphQL::Analysis::AST
