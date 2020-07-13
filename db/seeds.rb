@@ -11,6 +11,12 @@ service_images = [
   Rails.root + 'app/assets/images/services/pedicure.png'
 ]
 
+human_images = [
+  Rails.root + 'app/assets/images/taskers/harry.jpeg',
+  Rails.root + 'app/assets/images/taskers/ron.jpg',
+  Rails.root + 'app/assets/images/taskers/hermione.jpeg',
+];
+
 @service_type = ServiceType.create([
   { 
     name: "Cleaning", 
@@ -68,7 +74,7 @@ service_images = [
   customer = Customer.new(
     first_name: Faker::Name.first_name,
     last_name: Faker::Name.last_name,
-    image: nil,
+    image: File.open(human_images[rand(0..2)]),
     email: "customer-#{i}@example.com",
     password: @password,
     password_confirmation: @password,
@@ -80,7 +86,7 @@ service_images = [
   tasker = Tasker.new(
     first_name: Faker::Name.first_name,
     last_name: Faker::Name.last_name,
-    image: nil,
+    image: File.open(human_images[rand(0..2)]),
     email: "tasker-#{i}@example.com",
     password: @password,
     password_confirmation: @password,
