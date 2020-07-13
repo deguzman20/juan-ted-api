@@ -17,5 +17,6 @@ module Types
     field :tasks, [Types::TaskType], null: true
     field :conversations, [Types::ConversationType], null: true
     field :reviews, [Types::ReviewType], null: false
+    field :featured_skills, [Types::FeaturedSkillType], null: true
   end
 end

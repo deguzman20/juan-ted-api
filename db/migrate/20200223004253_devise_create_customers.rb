@@ -16,6 +16,8 @@ class DeviseCreateCustomers < ActiveRecord::Migration[5.2]
       t.string :card_detail
       t.string :auth_token
 
+      t.string :formatted_address
+
       ## Recoverable
       t.string   :reset_password_token
       t.datetime :reset_password_sent_at

@@ -29,6 +29,7 @@ ActiveRecord::Schema.define(version: 2020_07_02_233720) do
     t.string "zip_code"
     t.string "card_detail"
     t.string "auth_token"
+    t.string "formatted_address"
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
@@ -67,7 +68,7 @@ ActiveRecord::Schema.define(version: 2020_07_02_233720) do
     t.text "comment"
     t.integer "customer_id"
     t.integer "tasker_id"
-    t.integer "service_id"
+    t.integer "service_type_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

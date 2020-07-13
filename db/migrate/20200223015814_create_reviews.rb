@@ -5,7 +5,7 @@ class CreateReviews < ActiveRecord::Migration[5.2]
       t.text :comment
       t.integer :customer_id
       t.integer :tasker_id
-      t.integer :service_id
+      t.integer :service_type_id
 
       t.timestamps
     end

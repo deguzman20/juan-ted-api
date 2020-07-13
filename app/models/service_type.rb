@@ -13,6 +13,7 @@ class ServiceType < ApplicationRecord
 
   has_many :featured_skills
   has_many :taskers, through: :featured_skills
+  has_many :reviews, dependent: :destroy
 
   mount_uploader :image, OfferUploader
 end

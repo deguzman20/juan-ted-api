@@ -10,7 +10,7 @@ module Mutations
       # if context[:current_customer].present?
       todo = DeleteTodoService.call(args[:todo_id])
 
-      { resolve: todo }
+      { response: todo }
       # else
       #   { response: "Unauthorized" }
       # end

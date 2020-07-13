@@ -14,7 +14,7 @@
 require "rails_helper"
 
 RSpec.describe Service, type: :model do
-  it { is_expected.to have_many(:featured_skills) }
-  it { is_expected.to have_many(:taskers).through(:featured_skills) }
-  it { is_expected.to have_many(:reviews) }
+  # it { is_expected.to have_many(:featured_skills) }
+  # it { is_expected.to have_many(:taskers).through(:featured_skills) }
+  it { is_expected.to have_many(:reviews).dependent(:destroy) }
 end

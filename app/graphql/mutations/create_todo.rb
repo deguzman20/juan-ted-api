@@ -8,11 +8,7 @@ module Mutations
     type Types::TodoType
 
     def resolve(** args)
-      # if context[:current_customer].present?
       CreateTodoService.call(args[:todo_description], args[:customer_id])
-      # else
-      #   { response: "Unauthorized" }
-      # end
     end
   end
 end

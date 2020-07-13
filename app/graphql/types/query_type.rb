@@ -15,5 +15,6 @@ module Types
     field :all_reviews, resolver: Resolvers::QueryType::ReviewsResolver
     field :conversation_messages, resolver: Resolvers::QueryType::ConversationMessagesResolver
     field :conversation_list, resolver: Resolvers::QueryType::ConversationListResolver
+    field :past_tasker_list, resolver: Resolvers::QueryType::PastTaskersResolver
   end
 end

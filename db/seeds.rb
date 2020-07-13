@@ -87,9 +87,9 @@ service_images = [
     mobile_number: "09495939582",
     zip_code: "1403",
     hourly_rate: 10.00,
-    introduction: "lorem ipsum dolor",
+    introduction: Faker::Lorem.paragraph(sentence_count: 4, supplemental: false, random_sentences_to_add: 4),
     lng: 121.005239,
-    lat: 14.6649003
+    lat: 14.6649003,
   )
 
   if @service
@@ -106,4 +106,17 @@ service_images = [
         approved: rand(0..1),
         task_completed: rand(0..1))
   end
+
+  1.upto(10) do |b|
+    tasker_count = Tasker.count
+    service_type_count = ServiceType.count
+    customer_count = Customer.count
+    review = Review.create(rating: rand(1..5), 
+                    tasker_id: rand(1..tasker_count),
+                    customer_id: rand(1..customer_count),
+                    service_type_id: rand(1..service_type_count),
+                    comment: Faker::Lorem.paragraph(sentence_count: 2, supplemental: false, random_sentences_to_add: 4))
+  end
+
+
 end

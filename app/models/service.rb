@@ -14,7 +14,6 @@
 class Service < ApplicationRecord
   belongs_to :service_type, optional: true
 
-  has_many :reviews, dependent: :destroy
   has_many :keywords, dependent: :destroy
 
   has_many :transaction_services
