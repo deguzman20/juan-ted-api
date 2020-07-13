@@ -20,8 +20,7 @@ module Mutations
         @conversation_id = conversation.id
       end
 
-      repo = MessageRepository.new
-      @message = repo.create_in_room(conversation_id: @conversation_id,
+      @message = Message.create(conversation_id: @conversation_id,
                                      text: text, own_by_customer: own_by_customer)
       { message: @message }
     end
