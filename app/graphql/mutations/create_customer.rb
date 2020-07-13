@@ -17,7 +17,7 @@ module Mutations
     argument :auth_provider, CustomerAuthProviderSignupData, required: false
     field :response, String, null: true
     field :status_code, Integer, null: false
-    
+
     def resolve(auth_provider: nil, ** args)
       customer = Customer.new(
         email: auth_provider&.[](:email)&.[](:email),

@@ -30,7 +30,8 @@ require "rails_helper"
 
 RSpec.describe Customer, type: :model do
   it { is_expected.to have_many(:tasks) }
-  # it { is_expected.to have_many(:taskers).through(:tasks) }
+  it { is_expected.to have_many(:todos) }
   it { is_expected.to have_many(:reviews) }
-  # it { is_expected.to have_many(:taskers).through(:reviews) }
+  it { is_expected.to have_many(:conversations) }
+  it { is_expected.to have_many(:transactions) }
 end

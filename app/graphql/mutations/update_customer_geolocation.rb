@@ -8,7 +8,7 @@ module Mutations
     argument :formatted_address, String, required: false
     field :response, String, null: true
     field :status_code, Integer, null: false
-  
+
     def resolve(** args)
       customer = Customer.find(args[:customer_id])
       customer.lng = args[:lng].to_d
@@ -17,7 +17,7 @@ module Mutations
       if customer.save
         { response: "Update was successfully", status_code: 200 }
       else
-        { response: customer.errors.full_messages.join(""), status_code: 422 }    
+        { response: customer.errors.full_messages.join(""), status_code: 422 }
       end
     end
   end

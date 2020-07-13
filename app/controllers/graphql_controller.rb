@@ -47,12 +47,12 @@ class GraphqlController < ApplicationController
     end
 
     def generate_context
-      { current_user: set_current_user,
+      { current_user: nil,
         token: request.headers[:authorization] }
     end
 
-    def set_current_user
-      token = request.headers["Authorization"]
-      # AuthorizeApiRequest.call(request.headers).result if token.present?
-    end
+  # def set_current_user
+  #   token = request.headers["Authorization"]
+  #   # AuthorizeApiRequest.call(request.headers).result if token.present?
+  # end
 end

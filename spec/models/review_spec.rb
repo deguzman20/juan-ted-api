@@ -16,5 +16,5 @@ require "rails_helper"
 RSpec.describe Review, type: :model do
   it { is_expected.to belong_to(:customer) }
   it { is_expected.to belong_to(:tasker) }
-  it { is_expected.to belong_to(:service) }
+  it { is_expected.to belong_to(:service_type) }
 end

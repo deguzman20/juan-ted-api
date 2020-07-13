@@ -13,5 +13,5 @@ require "rails_helper"
 
 RSpec.describe TransactionService, type: :model do
   it { is_expected.to belong_to(:trans).class_name(:Transaction) }
-  it { is_expected.to belong_to(:service).optional(:true) }
+  it { is_expected.to belong_to(:service).optional(true) }
 end

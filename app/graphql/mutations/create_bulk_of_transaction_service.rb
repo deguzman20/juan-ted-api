@@ -5,8 +5,7 @@ module Mutations
 
     # argument :obj, Types::TodoType, required: true
     field :transaction_service, Types::TransactionServiceType, null: false
-    
-    def resolve
-    end
+
+    def resolve; end
   end
 end

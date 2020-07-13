@@ -9,18 +9,16 @@ class DeleteTodoService < ApplicationService
     delete_todo
   end
 
-    private
+  private
 
-      def delete_todo
-        todo = Todo.find(@todo_id)
-        if todo.present?
-          if todo.delete
-            "Todo was deleted"
-          else
-            "Failed to delete todo"
-          end
-        end
+    def delete_todo
+      todo = Todo.find(@todo_id)
+      return unless todo.present?
+
+      if todo.delete
+        "Todo was deleted"
       else
-        {}
+        "Failed to delete todo"
       end
+    end
 end

@@ -12,4 +12,3 @@ class FeaturedSkill < ApplicationRecord
   belongs_to :tasker
   belongs_to :service_type
 end
-  

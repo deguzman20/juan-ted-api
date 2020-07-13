@@ -13,4 +13,5 @@ require "rails_helper"
 RSpec.describe ServiceType, type: :model do
   it { is_expected.to have_many(:services) }
   it { is_expected.to have_many(:featured_skills) }
+  it { is_expected.to have_many(:reviews) }
 end
