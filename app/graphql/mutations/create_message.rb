@@ -21,7 +21,7 @@ module Mutations
       end
 
       @message = Message.create(conversation_id: @conversation_id,
-                                     text: text, own_by_customer: own_by_customer)
+                                text: text, own_by_customer: own_by_customer)
       { message: @message }
     end
   end

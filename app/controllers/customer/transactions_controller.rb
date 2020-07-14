@@ -1,7 +1,5 @@
 class Customer::TransactionsController < ApplicationController
   def create_transaction
-    @message = nil
-    @services = nil
     @lat = params[:lat].to_d
     @lng = params[:lng].to_d
     @transaction = Transaction.new(
@@ -13,12 +11,15 @@ class Customer::TransactionsController < ApplicationController
   end
 
   def create_bulk_of_transaction_service
-    [params[:services]].each do |service|
-      @services = service.to_s.gsub('\"', "").delete('"')
-    end
-    return if @services.nil?
+    @message = nil
 
-    @serv = @services
-    render json: @services.to_json
+    @transaction_service = TransactionService.create(JSON.parse(params[:services]))
+    @message = if @transaction_service
+      "Transaction service was created successfuly"
+    else
+      "Failed to create"
+    end
+
+    render json: @message.to_json
   end
 end
