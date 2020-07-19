@@ -11,7 +11,7 @@ module Resolvers
         if args[:is_customer] == true
           Conversation.where(tasker_id: args[:user_id])
         else
-          Conversation.where(is_customer: args[:user_id])
+          Conversation.where(customer_id: args[:user_id])
         end
       end
     end

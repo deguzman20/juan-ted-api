@@ -3,12 +3,15 @@ module Types
   class TransactionType < BaseObject
     description "Transaction service"
     field :id, ID, null: false
-    field :tasker, Types::TaskerType, null: true
-    # field :customer_id, ID, null: false
     field :lat, String, null: false
     field :lng, String, null: false
     field :approved, Boolean, null: false
-    field :start_from, String, null: false
-    field :start_to, String, null: false
+    field :favorate, Boolean, null: false
+    field :done, Boolean, null: false
+    field :from, String, null: false
+    field :to, String, null: false
+    field :tasker, Types::TaskerType, null: true
+    field :customer, Types::CustomerType, null: true
+    field :transaction_services, [Types::TransactionServiceType], null: true
   end
 end

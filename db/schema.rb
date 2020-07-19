@@ -152,8 +152,10 @@ ActiveRecord::Schema.define(version: 2020_07_02_233720) do
     t.decimal "lat", precision: 10, scale: 6
     t.decimal "lng", precision: 10, scale: 6
     t.boolean "approved", default: false
-    t.datetime "start_from"
-    t.datetime "start_to"
+    t.boolean "done", default: false
+    t.datetime "from"
+    t.datetime "to"
+    t.boolean "favorate"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

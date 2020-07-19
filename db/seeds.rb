@@ -1,14 +1,14 @@
 
 service_type_images = [
-  Rails.root + 'app/assets/images/service_types/cleaning.jpeg',
-  Rails.root + 'app/assets/images/service_types/home_repair.jpg',
-  Rails.root + 'app/assets/images/service_types/laundry.jpg',
-  Rails.root + 'app/assets/images/service_types/nail_care.jpg'
+  Rails.root + 'app/assets/images/service_types/barber.jpg',
+  Rails.root + 'app/assets/images/service_types/hair_salon.jpg'
 ]
 
 service_images = [
-  Rails.root + 'app/assets/images/services/manicure.png',
-  Rails.root + 'app/assets/images/services/pedicure.png'
+  Rails.root + 'app/assets/images/services/haircut.jpeg',
+  Rails.root + 'app/assets/images/services/rebond.jpg',
+  Rails.root + 'app/assets/images/services/keratin_treatment.jpg',
+  Rails.root + 'app/assets/images/services/salon_haircut.jpg',
 ]
 
 human_images = [
@@ -19,53 +19,44 @@ human_images = [
 
 @service_type = ServiceType.create([
   { 
-    name: "Cleaning", 
+    name: "Barber", 
     image:  File.open(service_type_images[0]) 
   },
   { 
-    name: "Home Repair", 
+    name: "Hair Salon", 
     image: File.open(service_type_images[1]) 
-  },
-  { 
-    name: "Laundry", 
-    image: File.open(service_type_images[2]) 
-  },
-  { 
-    name: "Nail Care", 
-    image: File.open(service_type_images[3]) 
   }
 ])
 
 @service = Service.create([
   { 
-    name: "Manicure", 
-    description: "Manicure sample description",
+    name: "Haircut", 
+    description: "Haircut sample description",
     price: 200.00, 
     image: File.open(service_images[0]),
-    service_type_id: 4
+    service_type_id: 1
   },
   { 
-    name: "Pedicure", 
-    description: "Pedicure sample description",
-    price: 150.00, 
+    name: "Rebond", 
+    description: "Rebond sample description",
+    price: 1500.00, 
     image: File.open(service_images[1]),
-    service_type_id: 4
+    service_type_id: 2
   },
   { 
-    name: "0-4 Kilos", 
-    price: 150.00, 
-    service_type_id: 3
+    name: "Keratin Treatment", 
+    description: "Keratin treatment sample description",
+    price: 1000.00, 
+    image: File.open(service_images[2]),
+    service_type_id: 2
   },
   { 
-    name: "5-8 Kilos", 
-    price: 200.00, 
-    service_type_id: 3
+    name: "Haircut", 
+    description: "Haircut sample description",
+    price: 100.00, 
+    image: File.open(service_images[3]),
+    service_type_id: 2
   },
-  { 
-    name: "9-12 Kilos", 
-    price: 350.00, 
-    service_type_id: 3
-  }
 ])
 
 @password = 'pass12345'

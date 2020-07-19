@@ -4,10 +4,12 @@
 #
 #  id          :bigint           not null, primary key
 #  approved    :boolean          default(FALSE)
+#  done        :boolean          default(FALSE)
+#  favorate    :boolean
+#  from        :datetime
 #  lat         :decimal(10, 6)
 #  lng         :decimal(10, 6)
-#  start_from  :datetime
-#  start_to    :datetime
+#  to          :datetime
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
 #  customer_id :integer

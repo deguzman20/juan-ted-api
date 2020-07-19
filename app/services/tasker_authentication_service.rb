@@ -35,7 +35,7 @@ class TaskerAuthenticationService < ApplicationService
         when "expired_token"
           token = JsonWebToken.encode(tasker_id: tasker.id)
           get_tasker.auth_token = token
-          get_cutomer.save!
+          get_tasker.save!
           JsonWebToken.decode(token)
           get_tasker
         when "decode_error"

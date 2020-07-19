@@ -1,10 +1,12 @@
 class Customer::TransactionsController < ApplicationController
   def create_transaction
-    @lat = params[:lat].to_d
-    @lng = params[:lng].to_d
     @transaction = Transaction.new(
-      tasker_id: params[:tasker_id].to_i, customer_id: params[:customer_id].to_i,
-      lat: @lat, lng: @lng
+      tasker_id: params[:tasker_id].to_i, 
+      customer_id: params[:customer_id].to_i,
+      lat: params[:lat].to_d, 
+      lng: params[:lng].to_d, 
+      from: params[:from],
+      to: params[:to]
     )
 
     render json: @transaction.id.to_json if @transaction.save

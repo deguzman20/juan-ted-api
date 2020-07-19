@@ -3,7 +3,6 @@ module Types
     # TODO: remove me
     field :create_tasker, mutation: Mutations::CreateTasker
     field :create_customer, mutation: Mutations::CreateCustomer
-    field :create_bulk_of_transaction_service, mutation: Mutations::CreateBulkOfTransactionService
     field :customer_signin, mutation: Mutations::SignInCustomer, null: true
     field :tasker_signin, mutation: Mutations::SignInTasker, null: true
     field :forgot_password, mutation: Mutations::ForgotPassword
