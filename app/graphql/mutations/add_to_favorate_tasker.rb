@@ -1,9 +1,9 @@
 module Mutations
   # mutation for adding new favorate tasker
-  class AddToFavorateTaske < BaseMutation
+  class AddToFavorateTasker < BaseMutation
     description "Add to favorate tasker"
 
-    argument :transaction_id, String, required: true
+    argument :transaction_id, Int, required: true
 
     field :response, String, null: true
     field :status_code, Integer, null: false
