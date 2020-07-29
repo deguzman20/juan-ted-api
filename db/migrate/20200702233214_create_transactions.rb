@@ -9,7 +9,7 @@ class CreateTransactions < ActiveRecord::Migration[5.2]
       t.boolean :done, default: false
       t.datetime :from
       t.datetime :to
-      t.boolean :favorate
+      t.boolean :favorate, default: false
       # t.datetime :start_to
       t.timestamps
     end
