@@ -5,7 +5,7 @@
 #  id          :bigint           not null, primary key
 #  approved    :boolean          default(FALSE)
 #  done        :boolean          default(FALSE)
-#  favorate    :boolean
+#  favorate    :boolean          default(FALSE)
 #  from        :datetime
 #  lat         :decimal(10, 6)
 #  lng         :decimal(10, 6)
