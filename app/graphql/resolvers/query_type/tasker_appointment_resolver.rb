@@ -8,8 +8,10 @@ module Resolvers
       type [Types::TransactionType], null: false
 
       def resolve(** args)
-        ::Transaction.where(tasker_id: args[:tasker_id])
-                     .where(approved: true) if args[:tasker_id].present?
+        if args[:tasker_id].present?
+          ::Transaction.where(tasker_id: args[:tasker_id])
+                       .where(approved: true)
+        end
       end
     end
   end
