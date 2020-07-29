@@ -8,8 +8,10 @@ module Resolvers
       type [Types::TransactionType], null: false
 
       def resolve(** args)
-        ::Transaction.where(customer_id: args[:customer_id])
-                     .where(favorate: true)  if args.present?
+        if args.present?
+          ::Transaction.where(customer_id: args[:customer_id])
+                       .where(favorate: true)
+        end
       end
     end
   end
