@@ -54,7 +54,7 @@ gem "virtus"
 # Gem for top level documentation
 gem "annotate"
 # Gem for Graphql debugger
-gem "graphiql-rails", "1.7.0", group: :development
+gem "graphiql-rails", "1.7.0"
 # Carrier Wave for image uploader
 gem "carrierwave", "~> 2.0", ">= 2.0.1"
 
