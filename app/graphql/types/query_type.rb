@@ -8,6 +8,7 @@ module Types
     field :tasker, resolver: Resolvers::QueryType::TaskerResolver
     field :service, resolver: Resolvers::QueryType::ServiceResolver
     field :tasker_by_geolocation, resolver: Resolvers::QueryType::TaskerByGeolocationResolver
+    field :favorate_tasker_by_geolocation, resolver: Resolvers::QueryType::FavorateTaskerByGeolocationResolver
     field :todo, resolver: Resolvers::QueryType::TodoResolver
     field :transaction_service, resolver: Resolvers::QueryType::TransactionServiceResolver
     field :all_customers, resolver: Resolvers::QueryType::CustomersResolver

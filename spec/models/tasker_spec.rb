@@ -7,6 +7,7 @@
 #  email                  :string(255)      default(""), not null
 #  encrypted_password     :string(255)      default(""), not null
 #  first_name             :string(255)
+#  formatted_address      :string(255)
 #  hourly_rate            :float(24)
 #  image                  :string(255)
 #  introduction           :text(65535)

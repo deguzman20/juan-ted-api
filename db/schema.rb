@@ -101,6 +101,7 @@ ActiveRecord::Schema.define(version: 2020_07_02_233720) do
     t.float "hourly_rate"
     t.text "introduction"
     t.string "auth_token"
+    t.string "formatted_address"
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"

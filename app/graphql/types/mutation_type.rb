@@ -12,6 +12,7 @@ module Types
     field :forgot_password, mutation: Mutations::ForgotPassword
     field :update_password, mutation: Mutations::ChangePassword
     field :update_customer_geolocation, mutation: Mutations::UpdateCustomerGeolocation, null: true
+    field :update_tasker_geolocation, mutation: Mutations::UpdateTaskerGeolocation
     field :update_transaction_status, mutation: Mutations::UpdateTransactionStatus
     field :update_transaction_status_to_done, mutation: Mutations::UpdateTransactionStatusToDone
     field :update_customer_info, mutation: Mutations::UpdateCustomerInfo
