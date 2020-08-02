@@ -18,5 +18,5 @@ class Service < ApplicationRecord
 
   has_many :transaction_services
   has_many :transactions, through: :transaction_services
-  mount_uploader :image, OfferUploader
+  mount_base64_uploader :image, OfferUploader
 end
