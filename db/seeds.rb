@@ -115,5 +115,14 @@ human_images = [
                     comment: Faker::Lorem.paragraph(sentence_count: 2, supplemental: false, random_sentences_to_add: 4))
   end
 
+  1.upto(5) do |f|
+    tasker_count = Tasker.count
+    service_type = ServiceType.count
+    FeaturedSkill.create(
+      tasker_id: rand(1..tasker_count),
+      service_type_id: rand(1..service_type)
+    )
+  end
+
 
 end
