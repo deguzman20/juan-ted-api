@@ -30,7 +30,6 @@ module Resolvers
             OR tr.to < '#{DateTime.parse(args[:start_from])}'
             AND tr.from > '#{DateTime.parse(args[:start_to])}'
             OR tr.to < '#{DateTime.parse(args[:start_to])}'
-            AND taskers.id = #{args[:tasker_id]}
             HAVING distance <='20' ORDER BY distance ASC LIMIT 0,10").uniq
         else
           Tasker.find_by_sql("SELECT taskers.id, taskers.first_name, taskers.last_name, taskers.email, taskers.lat, taskers.lng,
@@ -42,7 +41,6 @@ module Resolvers
             INNER JOIN featured_skills
             ON featured_skills.tasker_id = taskers.id
             AND featured_skills.service_type_id = '#{args[:service_type_id]}'
-            AND taskers.id = #{args[:tasker_id]}
             HAVING distance <='20' ORDER BY distance ASC LIMIT 0,10").uniq
         end
       end
