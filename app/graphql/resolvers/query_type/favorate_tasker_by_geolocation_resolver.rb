@@ -26,6 +26,7 @@ module Resolvers
             AND fs.service_type_id = '#{args[:service_type_id]}'
             LEFT JOIN transactions AS tr
             ON tr.tasker_id = fs.tasker_id
+            AND tr.tasker_id = '#{args[:tasker_id]}'
             WHERE tr.from > '#{DateTime.parse(args[:start_from])}'
             OR tr.to < '#{DateTime.parse(args[:start_from])}'
             AND tr.from > '#{DateTime.parse(args[:start_to])}'
