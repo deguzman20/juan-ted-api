@@ -5,6 +5,7 @@ module Types
     field :create_customer, mutation: Mutations::CreateCustomer
     field :create_todo, mutation: Mutations::CreateTodo
     field :create_message, mutation: Mutations::CreateMessage
+    field :create_review, mutation: Mutations::CreateReview
     field :customer_signin, mutation: Mutations::SignInCustomer, null: true
     field :add_to_favorate_tasker, mutation: Mutations::AddToFavorateTasker
     field :remove_to_favorate_tasker, mutation: Mutations::RemoveToFavorateTasker
