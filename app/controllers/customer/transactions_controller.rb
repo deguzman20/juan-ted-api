@@ -6,7 +6,8 @@ class Customer::TransactionsController < ApplicationController
       lat: params[:lat].to_d,
       lng: params[:lng].to_d,
       from: params[:from],
-      to: params[:to]
+      to: params[:to],
+      service_type_id: params[:service_type_id]
     )
 
     render json: @transaction.id.to_json if @transaction.save
