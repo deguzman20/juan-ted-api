@@ -12,6 +12,7 @@ module Types
     field :to, String, null: false
     field :tasker, Types::TaskerType, null: true
     field :customer, Types::CustomerType, null: true
+    field :service_type, Types::ServiceTypeType, null: true
     field :transaction_services, [Types::TransactionServiceType], null: true
   end
 end

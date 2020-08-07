@@ -9,7 +9,8 @@
 #  updated_at :datetime         not null
 #
 class ServiceType < ApplicationRecord
-  has_many :services
+  has_many :services, dependent: :destroy
+  has_many :transactions
 
   has_many :featured_skills
   has_many :taskers, through: :featured_skills

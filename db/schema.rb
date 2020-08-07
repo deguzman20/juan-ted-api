@@ -150,6 +150,7 @@ ActiveRecord::Schema.define(version: 2020_07_02_233720) do
   create_table "transactions", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "tasker_id"
     t.integer "customer_id"
+    t.integer "service_type_id"
     t.decimal "lat", precision: 10, scale: 6
     t.decimal "lng", precision: 10, scale: 6
     t.boolean "approved", default: false
