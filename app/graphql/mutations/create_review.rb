@@ -13,7 +13,7 @@ module Mutations
 
     def resolve(** args)
       review = Review.new(
-        rating: args[:review].to_f, 
+        rating: args[:rating].to_f, 
         comment: args[:comment],
         customer_id: args[:customer_id],
         tasker_id: args[:tasker_id],
