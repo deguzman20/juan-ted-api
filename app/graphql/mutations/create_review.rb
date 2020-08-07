@@ -1,0 +1,22 @@
+module Mutations
+  # mutation for creating review
+  class CreateReview < BaseMutation
+    description "Create Review"
+    argument :rating, Integer, required: true
+    argument :comment, String, required: true
+    argument :service_type_id, Integer, required: true
+
+    field :response, String, null: true
+    field :status_code, Integer, null: false
+
+    def resolve(** args)
+      review = Review.new(rating: args[:review].to_f, comment: args[:comment], service_type_id: args[:service_type_id])
+      
+      if review.save
+        { response: "Review Created", status_code: 200 }
+      else
+        { response: review.errors.full_messages.join(""), status_code: 422 }
+      end
+    end
+  end
+end
