@@ -104,16 +104,16 @@ human_images = [
         task_completed: rand(0..1))
   end
 
-  1.upto(10) do |b|
-    tasker_count = Tasker.count
-    service_type_count = ServiceType.count
-    customer_count = Customer.count
-    review = Review.create(rating: rand(1..5), 
-                    tasker_id: rand(1..tasker_count),
-                    customer_id: rand(1..customer_count),
-                    service_type_id: rand(1..service_type_count),
-                    comment: Faker::Lorem.paragraph(sentence_count: 2, supplemental: false, random_sentences_to_add: 4))
-  end
+  # 1.upto(10) do |b|
+  #   tasker_count = Tasker.count
+  #   service_type_count = ServiceType.count
+  #   customer_count = Customer.count
+  #   review = Review.create(rating: rand(1..5), 
+  #                   tasker_id: rand(1..tasker_count),
+  #                   customer_id: rand(1..customer_count),
+  #                   service_type_id: rand(1..service_type_count),
+  #                   comment: Faker::Lorem.paragraph(sentence_count: 2, supplemental: false, random_sentences_to_add: 4))
+  # end
 
   # 1.upto(5) do |f|
   #   tasker_count = Tasker.count
