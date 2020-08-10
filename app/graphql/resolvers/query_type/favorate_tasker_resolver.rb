@@ -10,7 +10,7 @@ module Resolvers
       def resolve(** args)
         if args.present?
           ::Transaction.where(customer_id: args[:customer_id])
-                       .where(favorate: true)
+                       .where(favorate: true).uniq
         end
       end
     end
