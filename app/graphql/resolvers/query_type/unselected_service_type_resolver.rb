@@ -8,7 +8,11 @@ module Resolvers
       type [Types::ServiceTypeType], null: false
 
       def resolve(** args)
-        ::ServiceType.where('id NOT IN (?)', args[:unselected_service_type].split(',').map(&:to_i)) unless args[:unselected_service_type].nil?
+        if args[:unselected_service_type] != ""
+          ::ServiceType.where('id NOT IN (?)', args[:unselected_service_type].split(',').map(&:to_i))
+        else
+          ::ServiceType.all
+        end
       end
     end
   end
