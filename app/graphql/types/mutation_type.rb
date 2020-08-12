@@ -9,6 +9,7 @@ module Types
     field :customer_signin, mutation: Mutations::SignInCustomer, null: true
     field :add_to_favorate_tasker, mutation: Mutations::AddToFavorateTasker
     field :remove_to_favorate_tasker, mutation: Mutations::RemoveToFavorateTasker
+    field :remove_featured_skill, mutation: Mutations::RemoveFeaturedSkill, null: true
     field :tasker_signin, mutation: Mutations::SignInTasker, null: true
     field :forgot_password, mutation: Mutations::ForgotPassword
     field :update_password, mutation: Mutations::ChangePassword
