@@ -11,7 +11,11 @@ module Resolvers
         if args[:tasker_id] != ""
           
           @selected_featured_skill = FeaturedSkill.where(tasker_id: args[:tasker_id]).map(&:service_type_id)
-          ::ServiceType.where("id NOT IN (?)", @selected_featured_skill)
+          if @selected_featured_skill.present?
+            ::ServiceType.where("id NOT IN (?)", @selected_featured_skill)
+          else
+            ServiceType.all
+          end
         end
       end
     end
