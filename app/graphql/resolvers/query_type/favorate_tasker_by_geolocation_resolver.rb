@@ -14,6 +14,7 @@ module Resolvers
 
       def resolve(** args)
         return if args.nil?
+
         if Transaction.count >= 1
           Tasker.find_by_sql("SELECT taskers.id, taskers.first_name, taskers.last_name, taskers.email, taskers.lat, taskers.lng,
             taskers.image, ((ACOS(SIN(#{args[:lat].to_d} * PI() / 180)

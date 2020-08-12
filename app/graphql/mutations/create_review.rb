@@ -13,12 +13,13 @@ module Mutations
 
     def resolve(** args)
       review = Review.new(
-        rating: args[:rating].to_f, 
+        rating: args[:rating].to_f,
         comment: args[:comment],
         customer_id: args[:customer_id],
         tasker_id: args[:tasker_id],
-        service_type_id: args[:service_type_id])
-      
+        service_type_id: args[:service_type_id]
+      )
+
       if review.save
         { response: "Review Created", status_code: 200 }
       else

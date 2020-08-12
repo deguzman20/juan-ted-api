@@ -10,8 +10,10 @@ module Mutations
     field :status_code, Integer, null: false
 
     def resolve(** args)
-      @featured_skill = FeaturedSkill.where(tasker_id: args[:tasker_id])
-                                      .where(service_type_id: args[:service_type_id]) if args.present?
+      if args.present?
+        @featured_skill = FeaturedSkill.where(tasker_id: args[:tasker_id])
+                                       .where(service_type_id: args[:service_type_id])
+      end
       if @featured_skill.present?
         @fs = FeaturedSkill.find(@featured_skill.ids[0])
         if @fs.delete

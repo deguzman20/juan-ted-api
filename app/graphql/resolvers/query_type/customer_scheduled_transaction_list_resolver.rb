@@ -7,9 +7,11 @@ module Resolvers
       type [Types::TransactionType], null: false
 
       def resolve(** args)
-        ::Transaction.where(customer_id: args[:customer_id])
-                      .where(approved: true)
-                      .where(done: false) unless args[:customer_id].nil?
+        unless args[:customer_id].nil?
+          ::Transaction.where(customer_id: args[:customer_id])
+                       .where(approved: true)
+                       .where(done: false)
+        end
       end
     end
   end

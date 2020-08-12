@@ -25,6 +25,6 @@ module Types
     field :pending_transaction_list, resolver: Resolvers::QueryType::PendingTransactionResolver
     field :tasker_service_type_list, resolver: Resolvers::QueryType::TaskerServiceTypeResolver
     field :customer_scheduled_transaction_list, resolver: Resolvers::QueryType::CustomerScheduledTransactionListResolver
-    field :customer_completed_transaction_list, resolver: Resolvers::QueryType::CustomerCompletedTransactionListResolver 
+    field :customer_completed_transaction_list, resolver: Resolvers::QueryType::CustomerCompletedTransactionListResolver
   end
 end
