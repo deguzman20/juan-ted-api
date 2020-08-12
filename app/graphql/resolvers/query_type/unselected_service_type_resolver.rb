@@ -3,15 +3,14 @@ module Resolvers
     class UnselectedServiceTypeResolver < GraphQL::Schema::Resolver
       description "List of unselected service type"
 
-      argument :unselected_service_type, String, required: true
+      argument :tasker_id, Integer, required: true
 
       type [Types::ServiceTypeType], null: false
 
       def resolve(** args)
-        if args[:unselected_service_type] != ""
-          ::ServiceType.where("id NOT IN (?)", args[:unselected_service_type].split(",").map(&:to_i))
-        else
-          ::ServiceType.all
+        if args[:tasker_id] != ""
+          @selected_featured_skill = FeaturedSkill.where(tasker_id: args[:tasker_id]).map(&:service_type_id)
+          ::ServiceType.where("id NOT IN (?)", @selected_featured_skill)
         end
       end
     end
