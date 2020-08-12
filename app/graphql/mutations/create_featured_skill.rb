@@ -3,8 +3,9 @@ module Mutations
   class CreateFeaturedSkill < BaseMutation
     description "Create featured skill"
     field :response, String, null: true
+    field :status_code, String, null: false
     argument :tasker_id, Integer, required: true
-    argument :service_type_id, String, required: true
+    argument :service_type_id, Integer, required: true
 
     def resolve(** args)
       featured_skill = FeaturedSkill.new(service_type_id: args[:service_type_id], 
