@@ -29,6 +29,8 @@ gem "mini_magick"
 gem "redis", "~> 4.1.2"
 
 gem "carrierwave-base64"
+
+gem "rails_admin"
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'rails
 

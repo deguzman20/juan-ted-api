@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   namespace :customer do
     get "change_password/:id", to: "change_password#change_password", as: :change_password
     get "create_transaction", to: "transactions#create_transaction"
