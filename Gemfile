@@ -31,6 +31,7 @@ gem "redis", "~> 4.1.2"
 gem "carrierwave-base64"
 
 gem "rails_admin"
+gem "rails_admin_rollincode", "~> 1.0"
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'rails
 
