@@ -7,6 +7,7 @@ module Types
     field :lng, String, null: false
     field :approved, Boolean, null: false
     field :favorate, Boolean, null: false
+    field :review, Boolean, null: false
     field :done, Boolean, null: false
     field :from, String, null: false
     field :to, String, null: false
