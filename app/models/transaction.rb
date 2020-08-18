@@ -9,6 +9,7 @@
 #  from            :datetime
 #  lat             :decimal(10, 6)
 #  lng             :decimal(10, 6)
+#  review          :boolean          default(FALSE)
 #  to              :datetime
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null
@@ -20,7 +21,6 @@ class Transaction < ApplicationRecord
   belongs_to :customer, optional: true
   belongs_to :tasker, optional: true
   belongs_to :service_type, optional: true
-
   has_many :transaction_services
   has_many :services, through: :transaction_services
 end
