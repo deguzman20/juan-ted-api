@@ -9,6 +9,7 @@
 #  from            :datetime
 #  lat             :decimal(10, 6)
 #  lng             :decimal(10, 6)
+#  review          :boolean          default(FALSE)
 #  to              :datetime
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null
