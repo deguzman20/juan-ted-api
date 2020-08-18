@@ -11,6 +11,8 @@ class CreateTransactions < ActiveRecord::Migration[5.2]
       t.datetime :from
       t.datetime :to
       t.boolean :favorate, default: false
+      t.boolean :review, default: :false
+      
       # t.datetime :start_to
       t.timestamps
     end
