@@ -7,5 +7,8 @@ module Types
     field :description, String, null: true
     field :image, String, null: false
     field :price, Float, null: false
+    field :equipment_uses, [Types::EquipmentUseType], null: true
+    field :what_is_includeds, [Types::WhatIsIncludedType], null: true
+    field :why_this_services, [Types::WhyThisServiceType], null: true
   end
 end

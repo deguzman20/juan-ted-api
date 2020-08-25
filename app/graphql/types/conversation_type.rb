@@ -8,3 +8,4 @@ module Types
     field :messages, [Types::MessageType], null: true
   end
 end
+  

@@ -19,4 +19,8 @@ class Service < ApplicationRecord
 
   has_many :transaction_services
   has_many :transactions, through: :transaction_services
+  
+  has_many :equipment_uses, dependent: :destroy
+  has_many :what_is_includeds, dependent: :destroy
+  has_many :why_this_services, dependent: :destroy
 end
