@@ -59,6 +59,95 @@ human_images = [
   },
 ])
 
+@what_is_included = WhatIsIncluded.create([
+  {
+    service_id: 1,
+    text: "A mess Free Haircut"
+  },
+  {
+    service_id: 1,
+    text: "An all inclusive setup including the equipment and a zero mess cape"
+  },
+  {
+    service_id: 1,
+    text: "Customizable Haircut of your choice styled by professionals"
+  }
+])
+
+@what_is_included = EquipmentUse.create([
+  {
+    service_id: 1,
+    text: "Sanitized Scissors"
+  },
+  {
+    service_id: 1,
+    text: "Mirror"
+  },
+  {
+    service_id: 1,
+    text: "Hair Sprayer"
+  },
+  {
+    service_id: 1,
+    text: "Electric Trimmer"
+  },
+  {
+    service_id: 1,
+    text: "Vacuum Cleaner"
+  },
+  {
+    service_id: 1,
+    text: "Floor Sheet"
+  },
+  {
+    service_id: 1,
+    text: "Disposable Wipes"
+  },
+  {
+    service_id: 1,
+    text: "Hair Gel"
+  },
+  {
+    service_id: 1,
+    text: "Gloves"
+  },
+  {
+    service_id: 1,
+    text: "Masks"
+  },
+  {
+    service_id: 1,
+    text: "PPE Kit"
+  },
+])
+
+@why_this_services = WhyThisService.create([
+  {
+    service_id: 1,
+    reason: "At Home safety ensured as you don't need to step out"
+  },
+  { 
+    service_id: 1,
+    reason: "Our barber wear masks & gloves and follow WHO hygiene guidelines"
+  },
+  { 
+    service_id: 1,
+    reason: "Scissors, combs, and other equipment is sanitized before and after every use"
+  },
+  { 
+    service_id: 1,
+    reason: "We only use disposable sheets, towels, and cape"
+  },
+  { 
+    service_id: 1,
+    reason: "Regular temperature checks of pros are done on a daily basis"
+  },
+  { 
+    service_id: 1,
+    reason: "Our stylists commute using their own vehicle thereby minimizing contact"
+  }
+])
+
 @password = 'pass12345'
 
 1.upto(5) do |i|
@@ -104,95 +193,6 @@ human_images = [
         task_completed: rand(0..1))
   end
 
-  @why_this_services = WhyThisService.create([
-    {
-      service_id: 1,
-      reason: "At Home safety ensured as you don't need to step out"
-    },
-    { 
-      service_id: 1,
-      reason: "Our barber wear masks & gloves and follow WHO hygiene guidelines"
-    },
-    { 
-      service_id: 1,
-      reason: "Scissors, combs, and other equipment is sanitized before and after every use"
-    },
-    { 
-      service_id: 1,
-      reason: "We only use disposable sheets, towels, and cape"
-    },
-    { 
-      service_id: 1,
-      reason: "Regular temperature checks of pros are done on a daily basis"
-    },
-    { 
-      service_id: 1,
-      reason: "Our stylists commute using their own vehicle thereby minimizing contact"
-    }
-  ])
-
-  @what_is_included = WhatIsIncluded.create([
-    {
-      service_id: 1,
-      text: "A mess Free Haircut"
-    },
-    {
-      service_id: 1,
-      text: "An all inclusive setup including the equipment and a zero mess cape"
-    },
-    {
-      service_id: 1,
-      text: "Customizable Haircut of your choice styled by professionals"
-    }
-  ])
-
-  @what_is_included = EquipmentUse.create([
-    {
-      service_id: 1,
-      text: "Sanitized Scissors"
-    },
-    {
-      service_id: 1,
-      text: "Mirror"
-    },
-    {
-      service_id: 1,
-      text: "Hair Sprayer"
-    },
-    {
-      service_id: 1,
-      text: "Electric Trimmer"
-    },
-    {
-      service_id: 1,
-      text: "Vacuum Cleaner"
-    },
-    {
-      service_id: 1,
-      text: "Floor Sheet"
-    },
-    {
-      service_id: 1,
-      text: "Disposable Wipes"
-    },
-    {
-      service_id: 1,
-      text: "Hair Gel"
-    },
-    {
-      service_id: 1,
-      text: "Gloves"
-    },
-    {
-      service_id: 1,
-      text: "Masks"
-    },
-    {
-      service_id: 1,
-      text: "PPE Kit"
-    },
-  ])
-  
 
   # 1.upto(10) do |b|
   #   tasker_count = Tasker.count
