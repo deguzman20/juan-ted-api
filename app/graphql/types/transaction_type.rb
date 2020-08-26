@@ -5,6 +5,7 @@ module Types
     field :id, ID, null: false
     field :lat, String, null: false
     field :lng, String, null: false
+    field :formatted_address, String, null: true
     field :approved, Boolean, null: false
     field :favorate, Boolean, null: false
     field :review, Boolean, null: false
