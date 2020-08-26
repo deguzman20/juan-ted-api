@@ -160,6 +160,7 @@ ActiveRecord::Schema.define(version: 2020_08_25_081905) do
     t.integer "service_type_id"
     t.decimal "lat", precision: 10, scale: 6
     t.decimal "lng", precision: 10, scale: 6
+    t.string "formatted_address"
     t.boolean "approved", default: false
     t.boolean "done", default: false
     t.datetime "from"

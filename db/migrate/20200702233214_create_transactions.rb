@@ -6,6 +6,7 @@ class CreateTransactions < ActiveRecord::Migration[5.2]
       t.integer :service_type_id
       t.decimal :lat, precision: 10, scale: 6
       t.decimal :lng, precision: 10, scale: 6
+      t.string :formatted_address
       t.boolean :approved, default: false
       t.boolean :done, default: false
       t.datetime :from
