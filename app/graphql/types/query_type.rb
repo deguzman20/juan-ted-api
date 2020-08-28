@@ -27,5 +27,6 @@ module Types
     field :customer_scheduled_transaction_list, resolver: Resolvers::QueryType::CustomerScheduledTransactionListResolver
     field :customer_completed_transaction_list, resolver: Resolvers::QueryType::CustomerCompletedTransactionListResolver
     field :most_helpful_reviews, resolver: Resolvers::QueryType::MostHelpfulReviewsResolver
+    field :customer_shipping_address_list, resolver: Resolvers::QueryType::CustomerShippingAddressResolver
   end
 end
