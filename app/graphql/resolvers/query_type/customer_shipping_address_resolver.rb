@@ -8,7 +8,7 @@ module Resolvers
 
       def resolve(** args)
         unless args[:customer_id].nil?
-          ::Transaction.where(customer_id: args[:customer_id]).pluck(:formatted_address)
+          ::Transaction.where(customer_id: args[:customer_id])
         end
       end
     end
