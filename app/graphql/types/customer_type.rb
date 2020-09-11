@@ -9,7 +9,7 @@ module Types
     field :formatted_address, String, null: true
     field :image, String, null: true
     field :mobile_number, String, null: false
-    field :zip_code, String, null: false
+    field :zip_code, String, null: true
     field :card_detail, String, null: false
     field :email, String, null: false
     field :auth_token, String, null: false
