@@ -10,9 +10,9 @@ module Types
     field :image, String, null: true
     field :mobile_number, String, null: false
     field :zip_code, String, null: true
-    field :card_detail, String, null: false
+    field :card_detail, String, null: true
     field :email, String, null: false
-    field :auth_token, String, null: false
+    field :auth_token, String, null: true
     field :lng, String, null: true
     field :lat, String, null: true
     field :tasks, [Types::TaskType], null: true
