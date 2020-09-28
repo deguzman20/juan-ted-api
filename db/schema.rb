@@ -167,6 +167,7 @@ ActiveRecord::Schema.define(version: 2020_08_25_081905) do
     t.datetime "to"
     t.boolean "favorate", default: false
     t.boolean "review", default: false
+    t.boolean "paid", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

@@ -10,6 +10,7 @@
 #  from              :datetime
 #  lat               :decimal(10, 6)
 #  lng               :decimal(10, 6)
+#  paid              :boolean          default(FALSE)
 #  review            :boolean          default(FALSE)
 #  to                :datetime
 #  created_at        :datetime         not null

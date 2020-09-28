@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'checkout/redirect_to_paypal'
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   namespace :customer do
     get "change_password/:id", to: "change_password#change_password", as: :change_password
@@ -13,5 +14,7 @@ Rails.application.routes.draw do
   mount ActionCable.server, at: "/cable"
   mount GraphiQL::Rails::Engine, at: "/graphiql", graphql_path: "/graphql"
   post "/graphql", to: "graphql#execute"
+  get '/redirect_to_paypal', to: 'checkout#redirect_to_paypal', as: :paypal
+  get '/paypals', to: 'checkout#redirect'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
