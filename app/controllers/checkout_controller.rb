@@ -18,7 +18,7 @@ class CheckoutController < ApplicationController
     transactions = payment.links.find { |v| v.rel == 'approval_url' }
     if payment.execute(payer_id: params[:PayerID])
       subtotal = 0
-      transaction = Transaction.find_by_customer_id($customer_id.to_i).last
+      transaction = Transaction.where(customer_id: $customer_id.to_i).last
       transaction.paid = true
       if transaction.save
         redirect_to transactions.href.to_s
