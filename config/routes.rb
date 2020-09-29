@@ -16,5 +16,6 @@ Rails.application.routes.draw do
   post "/graphql", to: "graphql#execute"
   get '/redirect_to_paypal', to: 'checkout#redirect_to_paypal', as: :paypal
   get '/paypals', to: 'checkout#redirect'
+  get '/execute', to: 'checkout#execute'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
