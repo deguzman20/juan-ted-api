@@ -6,6 +6,7 @@ class CheckoutController < ApplicationController
     transaction_service = TransactionService.new
     transaction = Transaction.where(customer_id: params[:customer_id].to_i).last
     transaction_services = TransactionService.where(transaction_id: transaction.id)
+                                              .where("quantity != ? ", 0)
     base_url = request.base_url
     redirect_to transaction_service.paypal_url(transaction_services, base_url)
   end
