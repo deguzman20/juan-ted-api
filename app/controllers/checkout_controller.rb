@@ -21,7 +21,7 @@ class CheckoutController < ApplicationController
       transaction = Transaction.where(customer_id: $customer_id.to_i).last
       transaction.paid = true
       if transaction.save
-        
+        render json: "".to_json
       end
     else
       payment.error # Error Hash
