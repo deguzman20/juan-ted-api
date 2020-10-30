@@ -17,5 +17,10 @@ Rails.application.routes.draw do
   get '/redirect_to_paypal', to: 'checkout#redirect_to_paypal', as: :paypal
   get '/paypals', to: 'checkout#redirect'
   get '/execute', to: 'checkout#execute'
+
+
+  resources :tasker, only: [:new]
+  get "/tasker", to: "tasker#create"
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

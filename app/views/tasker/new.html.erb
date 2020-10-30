@@ -1,0 +1,123 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12 col-lg-12">
+      <%= form_for :tasker, builder: TaskerFormBuilder, novalidate: true do |f|  %>
+        <section class="contact-section my-5">
+          <div class="card">
+            <div class="row">
+              <div class="col-lg-12 col-md-12">
+                <div class="card-body form">
+                  <p class="mt-4">
+                    Tasker Registration
+                  </p>
+                  <div class="row">
+                    <%= f.text_field :first_name %>
+                    <%= f.text_field :last_name %>
+                  </div>
+                  <div class="row">
+                    <%= f.text_field :mobile_number %>
+                    <%= f.text_field :email %>
+                  </div>
+                  <div class="row">
+                    <%= f.text_field :password %>
+                    <%= f.text_field :password_confirmation %>
+                  </div>
+                  <%= f.submit 'Send', class: 'btn-floating btn-lg white-text btn-black' %>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<script>
+jQuery.validator.setDefaults({
+  debug: true,
+  success: "valid"
+});
+
+$("form").validate({
+  ignore: ":hidden",
+  validClass: "is-valid",
+  errorClass: "is-invalid",  
+  rules: {
+    first_name: {
+      required: true,
+    },
+    last_name: {
+      required: true,
+    },
+    email: {
+      required: true,
+      email: true
+    },
+    mobile_number: {
+      required: true,
+      pattern: /^(09|\+639)\d{9}$/
+    },
+    password: {
+      required: true,
+    },
+    password_confirmation: {
+      required: true,
+    },
+  },
+  messages: {
+    first_name: {
+      required: 'Please enter your firstname'
+    },
+    last_name: {
+      required: 'Please enter your lastname'
+    },
+    email: {
+      required: 'Please enter your email',
+      regex: 'Please enter a valid email'
+    },
+    mobile_number: {
+      required: 'Please enter your mobile number',
+      regex: "Please enter a valid mobile number" 
+    },
+    password: {
+      required: 'Please enter your password'
+    },
+    password_confirmation: {
+      required: 'Please enter your password confirmation'
+    },
+  },
+  wrapper: 'span',
+  errorPlacement: function (error, element) {
+    error.css({
+      "color": "#dc3545",
+      "width": "100%",
+      "font-size": "80%",
+      "margin-top": ".25rem"
+    });
+    error.insertAfter(element);
+  },
+  submitHandler: function(form) {
+    var serialized_data = $(form).serialize();
+    $.ajax({
+      url: "/tasker",
+      method: "GET",
+      dataType: "JSON",
+      data: serialized_data,
+      success:function(data){
+        if(data == "Your inquiry was send successfuly"){
+          swal('Your inquiry was successfuly send', '', 'success');
+          $("input, textarea").val("").removeClass("is-valid");
+          $("select").removeClass("is-valid");
+        }
+      },
+      error:function(err){
+        console.log(err);
+      }
+    });
+  }
+});
+
+</script>
+
+<%#= javascript_include_tag 'tasker', 'data-turbolinks-track': 'reload' %>
