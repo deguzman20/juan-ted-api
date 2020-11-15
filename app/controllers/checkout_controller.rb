@@ -20,6 +20,7 @@ class CheckoutController < ApplicationController
       subtotal = 0
       transaction = Transaction.where(customer_id: $customer_id.to_i).last
       transaction.paid = true
+      transaction.approved = true
       if transaction.save
         render json: "".to_json
       end
