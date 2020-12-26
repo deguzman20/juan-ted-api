@@ -243,7 +243,7 @@ GEM
     paypal-sdk-rest (1.7.4)
       multi_json (~> 1.0)
       xml-simple
-    pg (1.2.3)
+    pg (0.12.2)
     public_suffix (4.0.6)
     puma (3.12.6)
     rack (2.2.3)
@@ -448,7 +448,7 @@ DEPENDENCIES
   mini_magick
   paymongo
   paypal-sdk-rest
-  pg
+  pg (~> 0.12.2)
   puma (~> 3.11)
   rails (~> 5.2.3)
   rails_admin
