@@ -8,7 +8,8 @@ gem "geocoder"
 gem "rails", "~> 5.2.3"
 # Use mysql as the database for Active Record
 # gem "pg"
-gem "mysql2", ">= 0.4.4", "< 0.6.0"
+# gem "mysql2", ">= 0.4.4", "< 0.6.0"
+gem "pg"
 # Use Puma as the app server
 gem "puma", "~> 3.11"
 # Use SCSS for stylesheets
@@ -66,6 +67,8 @@ gem "carrierwave", "~> 2.0", ">= 2.0.1"
 gem "listen", ">= 3.0.5", "< 3.2"
 
 gem "fog-aws"
+
+gem 'paymongo'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem "bootsnap", ">= 1.1.0", require: false

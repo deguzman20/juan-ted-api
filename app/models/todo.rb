@@ -3,7 +3,7 @@
 # Table name: todos
 #
 #  id               :bigint           not null, primary key
-#  todo_description :string(255)
+#  todo_description :string
 #  created_at       :datetime         not null
 #  updated_at       :datetime         not null
 #  customer_id      :integer

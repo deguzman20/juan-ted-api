@@ -9,17 +9,17 @@
 # And be sure to use new-style password hashing:
 #   http://dev.mysql.com/doc/refman/5.7/en/old-client.html
 #
-default: &default
- adapter: mysql2
- encoding: utf8
- pool: 5
- username: root
- password: root
+# default: &default
+#  adapter: mysql2
+#  encoding: utf8
+#  pool: 5
+#  username: root
+#  password: root
 
 
-development:
- <<: *default
- database: juan_ted_api_developmnent
+# development:
+#  <<: *default
+#  database: juan_ted_api_developmnent
 
 # # Warning: The database defined as "test" will be erased and
 # # re-generated from your development database when you run "rake".
@@ -71,16 +71,19 @@ development:
 #
 
 
-# default: &default
-#   adapter: postgresql
-#   encoding: unicode
-#   # For details on connection pooling, see Rails configuration guide
-#   # http://guides.rubyonrails.org/configuring.html#database-pooling
-#   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+default: &default
+  adapter: postgresql
+  timeout: 5000
+  # Set your local PgSQL user here. I set this user creds from my local's pg.
+  username: postgres
+  password: root
+  # For details on connection pooling, see Rails configuration guide
+  # http://guides.rubyonrails.org/configuring.html#database-pooling
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
 
-# development:
-#   <<: *default
-#   database: juan_ted_api_development
+development:
+  <<: *default
+  database: juan_ted_api_development
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.

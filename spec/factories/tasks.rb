@@ -5,15 +5,15 @@
 #  id                     :bigint           not null, primary key
 #  approved               :boolean          default(FALSE)
 #  date_of_shedule        :datetime
-#  end_location_address   :string(255)
-#  latitude               :float(24)
-#  longitude              :float(24)
+#  end_location_address   :string
+#  latitude               :float
+#  longitude              :float
 #  number_of_hours        :integer
-#  start_location_address :string(255)
+#  start_location_address :string
 #  status                 :boolean          default(FALSE)
-#  street_address         :string(255)
+#  street_address         :string
 #  task_completed         :boolean          default(FALSE)
-#  unit_or_apt_no         :string(255)
+#  unit_or_apt_no         :string
 #  created_at             :datetime         not null
 #  updated_at             :datetime         not null
 #  customer_id            :integer

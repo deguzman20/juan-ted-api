@@ -6,7 +6,7 @@
 #  approved          :boolean          default(FALSE)
 #  done              :boolean          default(FALSE)
 #  favorate          :boolean          default(FALSE)
-#  formatted_address :string(255)
+#  formatted_address :string
 #  from              :datetime
 #  lat               :decimal(10, 6)
 #  lng               :decimal(10, 6)

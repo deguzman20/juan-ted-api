@@ -3,7 +3,7 @@
 # Table name: equipment_uses
 #
 #  id         :bigint           not null, primary key
-#  text       :string(255)
+#  text       :string
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #  service_id :integer

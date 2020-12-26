@@ -21,5 +21,8 @@ module Types
     field :update_customer_info, mutation: Mutations::UpdateCustomerInfo
     field :update_tasker_info, mutation: Mutations::UpdateTaskerInfo
     field :delete_todo, mutation: Mutations::DeleteTodo
+    field :gcash_grab_payment, mutation: Mutations::GcashGrab
+    field :create_token, mutation: Mutations::CreateToken
+    field :pay_via_card, mutation: Mutations::PayViaCard
   end
 end
