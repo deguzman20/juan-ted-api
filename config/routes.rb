@@ -6,7 +6,7 @@ Rails.application.routes.draw do
     get "create_transaction", to: "transactions#create_transaction"
     get "create_bulk_of_transaction_service", to: "transactions#create_bulk_of_transaction_service"
     post "update_customer_image", to: "customer_image#update_customer_image"
-    post "upload_image", to: "customer_image#update_customer_image"
+    post "upload_image", to: "upload_image#customer_upload_image"
   end
 
   devise_for :customers
