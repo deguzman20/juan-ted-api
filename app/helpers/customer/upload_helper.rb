@@ -1,0 +1,2 @@
+module Customer::UploadHelper
+end

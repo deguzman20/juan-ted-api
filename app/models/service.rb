@@ -15,12 +15,13 @@ class Service < ApplicationRecord
   mount_base64_uploader :image, OfferUploader
   belongs_to :service_type, optional: true
 
+  has_many :equipment_uses, dependent: :destroy
+
   has_many :keywords, dependent: :destroy
 
-  has_many :transaction_services
-  has_many :transactions, through: :transaction_services
+  # has_many :transaction_services
+  # has_many :transactions, through: :transaction_services
   
-  has_many :equipment_uses, dependent: :destroy
   has_many :what_is_includeds, dependent: :destroy
   has_many :why_this_services, dependent: :destroy
 end

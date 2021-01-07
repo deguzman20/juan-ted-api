@@ -34,6 +34,23 @@ RailsAdmin.config do |config|
     delete
     show_in_app
 
+
+    config.model Conversation do
+      visible false
+    end
+
+    config.model Keyword do
+      visible false
+    end
+
+    config.model Message do
+      visible false
+    end
+
+    config.model Todo do
+      visible false
+    end
+
     ## With an audit adapter, you can add:
     # history_index
     # history_show
