@@ -22,6 +22,6 @@ class Customer::UploadController < ApplicationController
   def update
     @customer = Customer.find(params[:upload][:id])
     @customer.image = params[:upload][:image]
-    @customer.save
+    render json: 'success'.to_json if @customer.save
   end
 end
