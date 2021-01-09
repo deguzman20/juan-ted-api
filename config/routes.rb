@@ -17,6 +17,7 @@ Rails.application.routes.draw do
     resources :upload
     post '/upload/edit', to: 'upload#edit'
     post '/upload/update', to: 'upload#update'
+    get 'upload/message/result', to: 'upload#message'
   end
 
   devise_for :customers

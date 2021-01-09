@@ -6,6 +6,8 @@ class Customer::UploadController < ApplicationController
     @upload =  Customer.new
   end
 
+  def message; end
+
   def create
     @upload = Customer.new(upload_params)
     if @upload.save
@@ -22,6 +24,6 @@ class Customer::UploadController < ApplicationController
   def update
     @customer = Customer.find(params[:upload][:id])
     @customer.image = params[:upload][:image]
-    render json: 'success'.to_json if @customer.save
+    redirect_to '/customer/upload/message/result' if @customer.save
   end
 end
