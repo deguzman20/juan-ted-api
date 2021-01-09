@@ -17,8 +17,7 @@
   <br/><br/>
   <br/><br/>
   <br/><br/>
-  <br/><br/>
-l: customer_upload_update_path do |f| %>
+  <%= form_for :upload, url: customer_upload_update_path do |f| %>
     <%= f.hidden_field :id, value: params[:id] %>
     <div class="row">
         <div class="col col-md-12 col-sm-12 col-xs-12">
