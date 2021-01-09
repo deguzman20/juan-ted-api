@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
+  namespace :tasker do
+    get 'upload/index'
+    get 'upload/new'
+    get 'upload/message'
+    get 'upload/create'
+    get 'upload/edit'
+    get 'upload/update'
+  end
   namespace :customer do
     get 'upload/index'
     get 'upload/new'
@@ -14,6 +22,13 @@ Rails.application.routes.draw do
     get "create_bulk_of_transaction_service", to: "transactions#create_bulk_of_transaction_service"
     post "update_customer_image", to: "customer_image#update_customer_image"
     # post "upload_image", to: "upload_image#customer_upload_image"
+    resources :upload
+    post '/upload/edit', to: 'upload#edit'
+    post '/upload/update', to: 'upload#update'
+    get 'upload/message/result', to: 'upload#message'
+  end
+
+  namespace :tasker do
     resources :upload
     post '/upload/edit', to: 'upload#edit'
     post '/upload/update', to: 'upload#update'
