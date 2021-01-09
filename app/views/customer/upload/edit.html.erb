@@ -9,18 +9,44 @@
 }
 </style>
 <div class="container">
+  <br/><br/>
+  <br/><br/>
+  <br/><br/>
+  <br/><br/>
+  <br/><br/>
+  <br/><br/>
+  <br/><br/>
+  <br/><br/>
+  <br/><br/>
+  <br/><br/>
+  <br/><br/>
+  <br/><br/>
+  <br/><br/>
+  <br/><br/>
+  <br/><br/>
+  <br/><br/>
+  <br/><br/>
+  <br/><br/>
+  <br/><br/>
+  <br/><br/>
+  <br/><br/>
+  <br/><br/>
+  <br/><br/>
+  <br/><br/>
+  <br/><br/>
+  <br/><br/>
+  <br/><br/>
+  <br/><br/>
+  <br/><br/>
+  <br/><br/>
+  <br/><br/>
   <%= form_for :upload, url: customer_upload_update_path do |f| %>
     <%= f.hidden_field :id, value: params[:id] %>
-    <br/>
     <div class="row">
-        <div class="col col-md-3 col-sm-3 col-xs-3">
-        </div>
-        <div class="col col-md-6 col-sm-6 col-xs-6">
+        <div class="col col-md-12 col-sm-12 col-xs-12">
           <center>
-            <%= image_tag !@customer.image_url.nil? ? @customer.image_url : '', class: 'img-fluid', id: 'image', width: 400 %>
+            <%= image_tag !@customer.image_url.nil? ? @customer.image_url : '', class: 'img-fluid', id: 'image', width:'100%' %>
           </center>
-        </div>
-        <div class="col col-md-3 col-sm-3 col-xs-3">
         </div>
     </div>
     <div class="row">   
