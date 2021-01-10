@@ -1,6 +1,7 @@
 module Types
   class MutationType < Types::BaseObject
     # TODO: remove me
+    field :create_billing_address, mutation: Mutations::CreateBillingAddress
     field :create_tasker, mutation: Mutations::CreateTasker
     field :create_customer, mutation: Mutations::CreateCustomer
     field :create_todo, mutation: Mutations::CreateTodo

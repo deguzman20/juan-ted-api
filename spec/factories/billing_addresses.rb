@@ -11,6 +11,7 @@
 #  state            :string(255)
 #  created_at       :datetime         not null
 #  updated_at       :datetime         not null
+#  customer_id      :integer
 #
 FactoryBot.define do
   factory :billing_address do

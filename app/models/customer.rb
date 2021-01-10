@@ -34,6 +34,8 @@ class Customer < ApplicationRecord
 
   has_many :todos
 
+  has_many :billing_addresses
+
   has_many :tasks
   has_many :taskers, through: :tasks
 

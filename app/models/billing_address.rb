@@ -11,7 +11,9 @@
 #  state            :string(255)
 #  created_at       :datetime         not null
 #  updated_at       :datetime         not null
+#  customer_id      :integer
 #
 class BillingAddress < ApplicationRecord
   has_many :transactions
+  belongs_to :customer, optional: true
 end

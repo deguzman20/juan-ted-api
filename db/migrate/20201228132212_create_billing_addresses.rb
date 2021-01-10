@@ -1,6 +1,7 @@
 class CreateBillingAddresses < ActiveRecord::Migration[5.2]
   def change
     create_table :billing_addresses do |t|
+      t.integer :customer_id
       t.string :address_line_one
       t.string :address_line_two
       t.string :city
