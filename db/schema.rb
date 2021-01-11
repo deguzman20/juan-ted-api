@@ -14,12 +14,16 @@ ActiveRecord::Schema.define(version: 2020_12_28_132212) do
 
   create_table "billing_addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "customer_id"
+    t.string "first_name"
+    t.string "last_name"
     t.string "address_line_one"
     t.string "address_line_two"
     t.string "city"
     t.string "state"
     t.string "postal_code"
     t.string "country"
+    t.string "email"
+    t.string "mobile_number"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -171,6 +175,7 @@ ActiveRecord::Schema.define(version: 2020_12_28_132212) do
     t.integer "customer_id"
     t.integer "service_type_id"
     t.integer "shipping_address_id"
+    t.integer "billing_address_id"
     t.decimal "lat", precision: 10, scale: 6
     t.decimal "lng", precision: 10, scale: 6
     t.string "formatted_address"

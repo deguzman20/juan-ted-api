@@ -3,6 +3,8 @@ module Mutations
   class CreateBillingAddress < BaseMutation
     description "Create Billing Address"
     argument :customer_id, Integer, required: true
+    argument :first_name, String, required: true
+    argument :last_name, String, required: true
     argument :address_line_one, String, required: true
     argument :address_line_two, String, required: true
     argument :city, String, required: true
@@ -15,6 +17,8 @@ module Mutations
     def resolve(** args)
       @billing_address = BillingAddress.new(
                           customer_id: args[:customer_id],
+                          first_name: args[:first_name],
+                          last_name: args[:last_name],
                           address_line_one: args[:address_line_one],
                           address_line_two: args[:address_line_two],
                           city: args[:city],

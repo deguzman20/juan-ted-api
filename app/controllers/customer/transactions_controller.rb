@@ -5,7 +5,8 @@ class Customer::TransactionsController < ApplicationController
       customer_id: params[:customer_id].to_i,
       lat: params[:lat].to_d,
       lng: params[:lng].to_d,
-      formatted_address: params[:formatted_address], 
+      formatted_address: params[:formatted_address],
+      billing_address_id: params[:billing_address_id].to_i, 
       from: params[:from],
       to: params[:to],
       service_type_id: params[:service_type_id]

@@ -15,6 +15,7 @@
 #  to                  :datetime
 #  created_at          :datetime         not null
 #  updated_at          :datetime         not null
+#  billing_address_id  :integer
 #  customer_id         :integer
 #  service_type_id     :integer
 #  shipping_address_id :integer
