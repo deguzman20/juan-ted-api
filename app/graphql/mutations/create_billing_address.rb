@@ -10,6 +10,9 @@ module Mutations
     argument :city, String, required: true
     argument :state, String, required: true
     argument :postal_code, String, required: true
+    argument :country, String, required: true
+    argument :email, String, required: true
+    argument :mobile_number, String, required: true
 
     field :response, String, null: true
     field :status_code, Integer, null: false
@@ -23,7 +26,10 @@ module Mutations
                           address_line_two: args[:address_line_two],
                           city: args[:city],
                           state: args[:state],
-                          postal_code: args[:postal_code]
+                          postal_code: args[:postal_code],
+                          country: args[:country],
+                          email: args[:email],
+                          mobile_number: args[:mobile_number]
                         )
 
       if @billing_address.save
