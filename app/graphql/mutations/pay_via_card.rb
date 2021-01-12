@@ -6,6 +6,7 @@ module Mutations
     # Personal Information
     argument :token, String, required: true
     argument :amount, Integer, required: true
+    argument :customer_id, Integer, required: true
 
     field :response, String, null: true
     field :status_code, Integer, null: false
@@ -23,7 +24,12 @@ module Mutations
       )
 
       if result.success?
-        { response: 'Paid Successfuly', status_code: 200 }
+        transaction = Transaction.where(customer_id: args[:customer_id]).last
+        transaction.paid = true
+        transaction.approved = true
+        if transaction.save
+          { response: 'Paid Successfuly', status_code: 200 }
+        end
       else
         { response: 'Failed to pay', status_code: 422 }
       end
