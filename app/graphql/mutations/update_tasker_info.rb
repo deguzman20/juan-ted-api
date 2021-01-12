@@ -7,6 +7,7 @@ module Mutations
     argument :last_name, String, required: false
     argument :email, String, required: false
     argument :mobile_number, String, required: false
+    argument :introduction, String, required: false
 
     field :response, String, null: true
     field :status_code, Integer, null: false
@@ -17,6 +18,7 @@ module Mutations
       tasker.last_name = args[:last_name] if args[:last_name] != "" || !args[:last_name].nil?
       tasker.email = args[:email] if args[:email] != "" || !args[:email].nil?
       tasker.mobile_number = args[:mobile_number] if args[:mobile_number] != "" || !args[:mobile_number].nil?
+      tasker.introduction = args[:introduction] if args[:introduction] != "" || !args[:introduction].nil?
 
       if tasker.save!
         { response: "Tasker info was updated!", status_code: 200 }
