@@ -11,6 +11,7 @@ module Resolvers
           ::Transaction.where(customer_id: args[:customer_id])
                        .where(approved: true)
                        .where(done: true)
+                       .where(paid: true)
         end
       end
     end
