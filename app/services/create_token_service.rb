@@ -9,32 +9,12 @@ class CreateTokenService < ApplicationService
   attr_accessor :exp_year
   attr_accessor :cvc
 
-  # attr_accessor :address_line_one
-  # attr_accessor :address_line_two
-  # attr_accessor :city
-  # attr_accessor :state
-  # attr_accessor :postal_code
-  # attr_accessor :country
-
-  # attr_accessor :name
-  # attr_accessor :email
-  # attr_accessor :mobile_no
-
   def initialize(number, exp_month, exp_year, cvc, billing_address_id)
     @number = number
     @exp_month = exp_month
     @exp_year = exp_year
     @cvc = cvc
     @billing_address_id = billing_address_id
-    # @address_line_one = address_line_one
-    # @address_line_two = address_line_two
-    # @city = city
-    # @state = state
-    # @postal_code = postal_code
-    # @country = country
-    # @name = name
-    # @email = email
-    # @mobile_no = mobile_no
   end
 
   def call

@@ -16,20 +16,18 @@ module Mutations
       
       result = gateway.transaction.sale(
         token: args[:token],
-        amount: args[:amount],
+        amount: 10000,
         currency: "PHP",
         # Below are optional
         description: "Payment for Invoice #0001",
-        statement_descriptor: "Local"
+        statement_descriptor: "MAKISU.CO"
       )
 
-      if result.success?
-        transaction = Transaction.where(customer_id: args[:customer_id]).last
-        transaction.paid = true
-        transaction.approved = true
-        if transaction.save
+      transaction = Transaction.where(customer_id: args[:customer_id]).last
+      transaction.paid = true
+      transaction.approved = true
+      if result.success? && transaction.save
           { response: 'Paid Successfuly', status_code: 200 }
-        end
       else
         { response: 'Failed to pay', status_code: 422 }
       end
