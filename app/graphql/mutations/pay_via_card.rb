@@ -12,21 +12,22 @@ module Mutations
     field :status_code, Integer, null: false
 
     def resolve(** args)
+      @transaction = Transaction.where(customer_id: args[:customer_id]).last
+
       gateway = Paymongo::Gateway.new(Paymongo::Configuration.new)
       
       result = gateway.transaction.sale(
         token: args[:token],
-        amount: 10000,
+        amount: args[:amount]+ 10000,
         currency: "PHP",
         # Below are optional
-        description: "Payment for Invoice #0001",
-        statement_descriptor: "MAKISU.CO"
+        description: "Payment for Invoice #000#{@transaction.id}",
+        statement_descriptor: "Local"
       )
 
-      transaction = Transaction.where(customer_id: args[:customer_id]).last
-      transaction.paid = true
-      transaction.approved = true
-      if result.success? && transaction.save
+      @transaction.paid = true
+      @transaction.approved = true
+      if result.success? && @transaction.save
           { response: 'Paid Successfuly', status_code: 200 }
       else
         { response: 'Failed to pay', status_code: 422 }
