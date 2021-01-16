@@ -7,12 +7,14 @@ module Mutations
     argument :token, String, required: true
     argument :amount, Integer, required: true
     argument :customer_id, Integer, required: true
+    argument :tasker_id, Integer, required: true
 
     field :response, String, null: true
     field :status_code, Integer, null: false
 
     def resolve(** args)
       @transaction = Transaction.where(customer_id: args[:customer_id]).last
+      @conversation = Conversation.new
 
       gateway = Paymongo::Gateway.new(Paymongo::Configuration.new)
       
@@ -27,7 +29,9 @@ module Mutations
 
       @transaction.paid = true
       @transaction.approved = true
-      if result.success? && @transaction.save
+      @conversation.customer_id = args[:customer_id]
+      @conversation.tasker_id = args[:tasker_id]
+      if result.success? && @transaction.save && conversation.save
           { response: 'Paid Successfuly', status_code: 200 }
       else
         { response: 'Failed to pay', status_code: 422 }

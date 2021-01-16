@@ -1,8 +1,10 @@
 class CheckoutController < ApplicationController
   $customer_id = nil
+  $tasker_id = nil
 
   def redirect_to_paypal
     $customer_id = params[:customer_id].to_i
+    $tasker_id = params[:tasker_id].to_i
     transaction_service = TransactionService.new
     transaction = Transaction.where(customer_id: params[:customer_id].to_i).last
     transaction_services = TransactionService.where(transaction_id: transaction.id)
@@ -19,9 +21,12 @@ class CheckoutController < ApplicationController
     if payment.execute(payer_id: params[:PayerID])
       subtotal = 0
       transaction = Transaction.where(customer_id: $customer_id.to_i).last
+      conversation = Conversation.new
+      conversation.customer_id = $customer_id
+      conversation.tasker_id = $tasker_id
       transaction.paid = true
       transaction.approved = true
-      if transaction.save
+      if transaction.save && conversation.save
         render json: "".to_json
       end
     else
