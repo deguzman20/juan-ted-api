@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_28_132212) do
+ActiveRecord::Schema.define(version: 2021_01_16_170218) do
 
   create_table "billing_addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "customer_id"
@@ -45,6 +45,7 @@ ActiveRecord::Schema.define(version: 2020_12_28_132212) do
     t.string "zip_code"
     t.string "card_detail"
     t.string "auth_token"
+    t.integer "notification_count"
     t.string "formatted_address"
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
@@ -82,6 +83,14 @@ ActiveRecord::Schema.define(version: 2020_12_28_132212) do
     t.integer "conversation_id"
     t.text "text"
     t.boolean "own_by_customer"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "notifications", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "customer_id"
+    t.integer "tasker_id"
+    t.string "text"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

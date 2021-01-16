@@ -14,6 +14,7 @@
 #  lat                    :decimal(10, 6)
 #  lng                    :decimal(10, 6)
 #  mobile_number          :string(255)
+#  notification_count     :integer
 #  remember_created_at    :datetime
 #  reset_password_sent_at :datetime
 #  reset_password_token   :string(255)
@@ -47,6 +48,8 @@ class Customer < ApplicationRecord
 
   has_many :transactions
   has_many :taskers, through: :transactions
+
+  has_many :notifications
 
   mount_uploader :image, CustomerUploader
 end

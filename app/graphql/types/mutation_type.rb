@@ -25,5 +25,6 @@ module Types
     field :gcash_grab_payment, mutation: Mutations::GcashGrab
     field :create_token, mutation: Mutations::CreateToken
     field :pay_via_card, mutation: Mutations::PayViaCard
+    field :create_notification, mutation: Mutations::CreateNotification
   end
 end

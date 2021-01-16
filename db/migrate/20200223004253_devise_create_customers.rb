@@ -15,6 +15,7 @@ class DeviseCreateCustomers < ActiveRecord::Migration[5.2]
       t.string :zip_code
       t.string :card_detail
       t.string :auth_token
+      t.integer :notification_count
 
       t.string :formatted_address
 

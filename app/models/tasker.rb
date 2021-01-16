@@ -51,5 +51,7 @@ class Tasker < ApplicationRecord
   has_many :transactions
   has_many :customers, through: :transactions
 
+  has_many :notifications
+
   mount_base64_uploader :image, TaskerUploader
 end
