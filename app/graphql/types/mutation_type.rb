@@ -26,5 +26,6 @@ module Types
     field :create_token, mutation: Mutations::CreateToken
     field :pay_via_card, mutation: Mutations::PayViaCard
     field :create_notification, mutation: Mutations::CreateNotification
+    field :clear_notification_count, mutation: Mutations::ClearCount
   end
 end

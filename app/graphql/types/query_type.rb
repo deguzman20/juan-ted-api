@@ -28,5 +28,6 @@ module Types
     field :most_helpful_reviews, resolver: Resolvers::QueryType::MostHelpfulReviewsResolver
     field :customer_shipping_address_list, resolver: Resolvers::QueryType::CustomerShippingAddressResolver
     field :billing_address_list, resolver: Resolvers::QueryType::BillingAddressesResolver
+    field :all_notifications_per_customer, resolver: Resolvers::QueryType::CustomerNotificationsResolver
   end
 end
