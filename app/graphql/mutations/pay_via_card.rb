@@ -31,7 +31,7 @@ module Mutations
       @transaction.approved = true
       @conversation.customer_id = args[:customer_id]
       @conversation.tasker_id = args[:tasker_id]
-      if result.success? && @transaction.save && conversation.save
+      if result.success? && @transaction.save && @conversation.save
           { response: 'Paid Successfuly', status_code: 200 }
       else
         { response: 'Failed to pay', status_code: 422 }
