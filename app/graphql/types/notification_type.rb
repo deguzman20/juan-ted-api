@@ -6,5 +6,6 @@ module Types
     field :customer, Types::CustomerType, null: true
     field :tasker, Types::TaskerType, null: true
     field :text, String, null: false
+    field :created_at, String, null: false
   end
 end
