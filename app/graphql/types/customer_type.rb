@@ -20,5 +20,6 @@ module Types
     field :todos, [Types::TodoType], null: true
     field :conversations, [Types::ConversationType], null: true
     field :transactions, [Types::TransactionType], null: true
+    field :notification_count, Integer, null: true
   end
 end
