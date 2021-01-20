@@ -10,6 +10,9 @@ module Mutations
 
     def resolve(customer_id:, tasker_id:, text:, own_by_customer:)
       @convesation_id = nil
+      @datetime = Time.new
+      @datetime.strftime("%d-%m-%Y %k-%M-%S")
+
       @conversation = Conversation.where(customer_id: customer_id)
                                   .where(tasker_id: tasker_id)
       if @conversation.present?
@@ -21,7 +24,8 @@ module Mutations
       end
 
       @message = Message.create(conversation_id: @conversation_id,
-                                text: text, own_by_customer: own_by_customer)
+                                text: text, own_by_customer: own_by_customer,
+                                created_date: @datetime)
       { message: @message }
     end
   end

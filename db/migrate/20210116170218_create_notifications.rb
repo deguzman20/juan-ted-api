@@ -4,6 +4,7 @@ class CreateNotifications < ActiveRecord::Migration[5.2]
       t.integer :customer_id
       t.integer :tasker_id
       t.string :text
+      t.string :created_date
 
       t.timestamps
     end

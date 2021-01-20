@@ -4,6 +4,7 @@ class CreateMessages < ActiveRecord::Migration[5.2]
       t.integer :conversation_id
       t.text :text
       t.boolean :own_by_customer
+      t.string :created_date
 
       t.timestamps
     end
