@@ -5,7 +5,7 @@ module Mutations
     argument :tasker_id, Integer, required: true
     argument :own_by_customer, Boolean, required: true
     argument :text, String, required: true
-    argument :date_created, required: true
+    argument :date_created, String, required: true
 
     field :message, Types::MessageType, null: false
 
@@ -22,8 +22,7 @@ module Mutations
       end
 
       @message = Message.create(conversation_id: @conversation_id,
-                                text: text, own_by_customer: own_by_customer,
-                                created_date: date_created)
+                                text: text, own_by_customer: own_by_customer, created_date: date_created)
       { message: @message }
     end
   end
