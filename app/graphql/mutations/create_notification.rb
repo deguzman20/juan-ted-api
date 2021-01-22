@@ -6,15 +6,14 @@ module Mutations
     argument :customer_id, Integer, required: true
     argument :tasker_id, Integer, required: true
     argument :text, String, required: true
+    argument :date_created, String, required: true
 
     def resolve(** args)
-      @datetime = Time.new
-      @datetime.strftime("%d-%m-%Y %k-%M-%S")
       @notification = Notification.new(
                         customer_id: args[:customer_id],
                         tasker_id: args[:tasker_id],
                         text: args[:text],
-                        time_created: @datetime
+                        date_created: args[:date_created]
                       )
 
       if @notification.save
