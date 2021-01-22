@@ -13,7 +13,7 @@ module Mutations
                         customer_id: args[:customer_id],
                         tasker_id: args[:tasker_id],
                         text: args[:text],
-                        date_created: args[:date_created]
+                        created_date: args[:date_created]
                       )
 
       if @notification.save
