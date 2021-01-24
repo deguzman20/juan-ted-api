@@ -53,5 +53,7 @@ class Tasker < ApplicationRecord
 
   has_many :notifications
 
+  has_many :reports
+
   mount_base64_uploader :image, TaskerUploader
 end

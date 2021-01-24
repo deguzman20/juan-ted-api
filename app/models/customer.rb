@@ -52,4 +52,6 @@ class Customer < ApplicationRecord
   has_many :notifications
 
   mount_uploader :image, CustomerUploader
+
+  has_many :reports
 end
