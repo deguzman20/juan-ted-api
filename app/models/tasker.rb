@@ -16,8 +16,10 @@
 #  lng                    :decimal(10, 6)
 #  mobile_number          :string(255)
 #  remember_created_at    :datetime
+#  report_count           :integer          default(0)
 #  reset_password_sent_at :datetime
 #  reset_password_token   :string(255)
+#  suspended              :boolean          default(FALSE)
 #  zip_code               :string(255)
 #  created_at             :datetime         not null
 #  updated_at             :datetime         not null

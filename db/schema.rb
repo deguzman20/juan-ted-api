@@ -100,6 +100,7 @@ ActiveRecord::Schema.define(version: 2021_01_24_085133) do
   create_table "reports", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "customer_id"
     t.integer "tasker_id"
+    t.boolean "valid_report", default: false
     t.string "image"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -144,6 +145,8 @@ ActiveRecord::Schema.define(version: 2021_01_24_085133) do
     t.text "introduction"
     t.string "auth_token"
     t.string "formatted_address"
+    t.integer "report_count", default: 0
+    t.boolean "suspended", default: false
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"

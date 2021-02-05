@@ -19,6 +19,8 @@ class DeviseCreateTaskers < ActiveRecord::Migration[5.2]
       t.string :auth_token
 
       t.string :formatted_address
+      t.integer :report_count, default: 0
+      t.boolean :suspended, default: false
 
       ## Recoverable
       t.string   :reset_password_token

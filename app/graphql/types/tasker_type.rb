@@ -17,6 +17,7 @@ module Types
     field :auth_token, String, null: false
     field :lng, String, null: true
     field :lat, String, null: true
+    field :suspended, Boolean, null: false
     field :tasks, [Types::TaskType], null: true
     field :conversations, [Types::ConversationType], null: true
     field :transactions, [Types::TransactionType], null: false
