@@ -13,6 +13,7 @@ class Customer::ReportController < ApplicationController
     @report.customer_id = params[:report][:customer_id].to_i
     @report.tasker_id = params[:report][:tasker_id].to_i
     @report.image = params[:report][:image]
+    @report.reason = params[:report][:reason]
     @report.save
     if @report.save
     else

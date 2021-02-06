@@ -102,6 +102,7 @@ ActiveRecord::Schema.define(version: 2021_01_24_085133) do
     t.integer "tasker_id"
     t.boolean "valid_report", default: false
     t.string "image"
+    t.string "reason"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

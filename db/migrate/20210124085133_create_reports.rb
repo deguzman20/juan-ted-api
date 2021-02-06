@@ -6,6 +6,7 @@ class CreateReports < ActiveRecord::Migration[5.2]
       t.boolean :valid_report, default: false
       
       t.string :image
+      t.string :reason
 
       t.timestamps
     end
