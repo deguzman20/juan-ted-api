@@ -19,7 +19,7 @@
         <%= f.hidden_field :tasker_id, value: params[:tasker_id] %>
         <div class="col col-md-12 col-sm-12 col-xs-12">
           <center>
-            <h3>please upload screenshot of your conversation and tell us your concern</h3>
+            <h1>please upload screenshot of your conversation and tell us your concern</h1>
     
             <%= image_tag 'camera-vector-icon', class: 'img-fluid', id: 'image', width:'100%' %>
           </center>
@@ -27,8 +27,9 @@
     </div>
     <div class="row">
       <div class="col col-md-12">
+        <h1>Reason:</h1>
         <br/>
-        <%= f.text_area :reason, id: 'reason', class: 'form-control', rows: 5, placeholder: 'Input your report', id: 'reason' %>
+        <%= f.text_area :reason, id: 'reason', class: 'form-control', rows: 5, id: 'reason', style: 'font-size: 40px' %>
       </div>
       <div class="col col-md-12">
         <br/>
