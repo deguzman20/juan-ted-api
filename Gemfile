@@ -61,7 +61,7 @@ gem "annotate"
 # Gem for Graphql debugger
 gem "graphiql-rails", "1.7.0"
 # Carrier Wave for image uploader
-gem "carrierwave", "~> 2.0", ">= 2.0.1"
+gem "carrierwave", "~> 2.1"
 
 gem "listen", ">= 3.0.5", "< 3.2"
 
