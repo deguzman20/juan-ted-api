@@ -23,7 +23,7 @@ module Resolvers
             AS distance FROM taskers
             INNER JOIN featured_skills AS fs
             ON fs.tasker_id = taskers.id
-            AND fs.service_type_id = '#{args[:service_type_id]}'
+            AND fs.service_type_id = '#{args[:service_type_id].to_i}'
             LEFT JOIN transactions AS tr
             ON tr.tasker_id = fs.tasker_id
             WHERE tr.from > '#{DateTime.parse(args[:start_from])}'
@@ -40,7 +40,7 @@ module Resolvers
             AS distance FROM taskers
             INNER JOIN featured_skills
             ON featured_skills.tasker_id = taskers.id
-            AND featured_skills.service_type_id = '#{args[:service_type_id]}'
+            AND featured_skills.service_type_id = '#{args[:service_type_id].to_i}'
             HAVING distance <='20' ORDER BY distance ASC LIMIT 0,10").uniq
         end
       end
