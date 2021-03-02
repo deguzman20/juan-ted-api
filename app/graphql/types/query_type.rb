@@ -29,5 +29,6 @@ module Types
     field :customer_shipping_address_list, resolver: Resolvers::QueryType::CustomerShippingAddressResolver
     field :billing_address_list, resolver: Resolvers::QueryType::BillingAddressesResolver
     field :all_notifications_per_customer, resolver: Resolvers::QueryType::CustomerNotificationsResolver
+    field :customer_report_list, resolver: Resolvers::QueryType::CustomerReportResolver
   end
 end
