@@ -17,20 +17,24 @@ class ChangePasswordService < ApplicationService
 
     def update_password
       if @is_customer
-        customer = Customer.find(id)
-        if customer.valid_password?(old_password)
-          if new_password == confirm_password
-            customer.password = new_password
-            "Password Successfuly updated!" if customer.save
+        @customer = Customer.find(@id)
+        if @customer.valid_password?(@old_password)
+          if @new_password == @confirm_password
+            @customer.password = @new_password
+            "Password Successfuly updated!" if @customer.save
           end
         else
           "Incorrect password"
         end
       else
-        tasker = Tasker.find(id)
-        if new_password == confirm_password
-          tasker.password = new_password
-          "Password Successfuly updated!" if tasker.save
+        @tasker = Tasker.find(@id)
+        if @tasker.valid_password?(@old_password)
+          if @new_password == @confirm_password
+            @tasker.password = @new_password
+            "Password Successfuly updated!" if @tasker.save
+          end
+        else
+          "Incorrect password"
         end
       end
     end
