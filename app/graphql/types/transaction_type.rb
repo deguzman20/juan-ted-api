@@ -15,6 +15,7 @@ module Types
     field :tasker, Types::TaskerType, null: true
     field :customer, Types::CustomerType, null: true
     field :service_type, Types::ServiceTypeType, null: true
+    field :billing_address, Types::BillingAddressType, null: false
     field :transaction_services, [Types::TransactionServiceType], null: true
   end
 end
