@@ -17,6 +17,7 @@
 #  updated_at          :datetime         not null
 #  billing_address_id  :integer
 #  customer_id         :integer
+#  payment_method_id   :integer
 #  service_type_id     :integer
 #  shipping_address_id :integer
 #  tasker_id           :integer
@@ -25,6 +26,7 @@ class Transaction < ApplicationRecord
   belongs_to :customer, optional: true
   belongs_to :tasker, optional: true
   belongs_to :billing_address, optional: true
+  belongs_to :payment_method, optional: true
   belongs_to :service_type, optional: true
   has_many :transaction_services
   has_many :services, through: :transaction_services

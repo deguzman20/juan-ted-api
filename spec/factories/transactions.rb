@@ -17,6 +17,7 @@
 #  updated_at          :datetime         not null
 #  billing_address_id  :integer
 #  customer_id         :integer
+#  payment_method_id   :integer
 #  service_type_id     :integer
 #  shipping_address_id :integer
 #  tasker_id           :integer

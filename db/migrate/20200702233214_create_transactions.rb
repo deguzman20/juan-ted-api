@@ -6,6 +6,7 @@ class CreateTransactions < ActiveRecord::Migration[5.2]
       t.integer :service_type_id
       t.integer :shipping_address_id
       t.integer :billing_address_id
+      t.integer :payment_method_id
       t.decimal :lat, precision: 10, scale: 6
       t.decimal :lng, precision: 10, scale: 6
       t.string :formatted_address

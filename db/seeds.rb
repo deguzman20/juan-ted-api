@@ -193,6 +193,15 @@ human_images = [
         task_completed: rand(0..1))
   end
 
+  PaymentMethod.create([
+    {
+      name: "Paypal"
+    },
+    { 
+      name: "Debit"
+    }
+  ])
+
 
   # 1.upto(10) do |b|
   #   tasker_count = Tasker.count
