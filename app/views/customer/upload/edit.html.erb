@@ -56,5 +56,12 @@
     $("#imgInp").change(function() {
       readURL(this);
     });
+
+    $("#btn_update").click(function(e){
+      if($("#imgInp").val() == ""){
+        alert("Please select image");
+        e.preventDefault();
+      }
+    });
   });
 </script>

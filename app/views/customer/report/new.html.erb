@@ -60,15 +60,15 @@
       }
     }
 
+    $("#imgInp").change(function() {
+      readURL(this);
+    });
+
     $("#btn_update").click(function(e){
-      if($("#reason").val() === "") {
+      if($("#reason").val() == "" || $("#imgInp").val() == "") {
         alert("All fields are required");
         e.preventDefault();
       }
-    });
-
-    $("#imgInp").change(function() {
-      readURL(this);
     });
   });
 </script>

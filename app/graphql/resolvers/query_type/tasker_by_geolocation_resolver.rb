@@ -26,11 +26,11 @@ module Resolvers
             AND fs.service_type_id = '#{args[:service_type_id].to_i}'
             LEFT JOIN transactions AS tr
             ON tr.tasker_id = fs.tasker_id
-            WHERE tr.from > '#{DateTime.parse(args[:start_from])}'
-            OR tr.to < '#{DateTime.parse(args[:start_from])}'
-            AND tr.from > '#{DateTime.parse(args[:start_to])}'
-            OR tr.to < '#{DateTime.parse(args[:start_to])}'
+            WHERE(('#{args[:start_from]}' < tr.from AND '#{args[:start_to]}' < tr.from)
+            OR('#{args[:start_from]}' > tr.to AND '#{args[:start_to]}' > tr.to))
             HAVING distance <='20' ORDER BY distance ASC LIMIT 0,10").uniq
+
+
         else
           Tasker.find_by_sql("SELECT taskers.id, taskers.first_name, taskers.last_name, taskers.email, taskers.lat, taskers.lng,
             taskers.image, ((ACOS(SIN(#{args[:lat].to_d} * PI() / 180)
