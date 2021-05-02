@@ -2,7 +2,7 @@ module Mutations
   # mutation for updating billing address
   class UpdateBillingAddress < BaseMutation
     description "Update Billing Address"
-    argument :billing_address_id, ID, required: true
+    argument :address, String, required: true
     argument :first_name, String, required: true
     argument :last_name, String, required: true
     argument :address_line_one, String, required: true
@@ -16,7 +16,7 @@ module Mutations
     field :status_code, Integer, null: false
 
     def resolve(** args)
-      @billing_address = BillingAddress.find(args[:billing_address_id].to_i)
+      @billing_address = BillingAddress.find(args[:adddress].to_i)
       @billing_address.first_name = args[:first_name]
       @billing_address.last_name = args[:last_name]
       @billing_address.address_line_one = args[:address_line_one]
