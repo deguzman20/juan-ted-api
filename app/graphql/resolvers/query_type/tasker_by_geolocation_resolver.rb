@@ -26,10 +26,11 @@ module Resolvers
             ON fs.tasker_id = taskers.id
             AND fs.service_type_id = '#{args[:service_type_id].to_i}'
             WHERE
-              NOT EXISTS (SELECT * FROM transactions AS tr WHERE tr.tasker_id = fs.tasker_id AND
+              NOT EXISTS 
+            (SELECT * FROM transactions AS tr WHERE tr.tasker_id = fs.tasker_id AND
             (tr.to >= '#{args[:start_from]}' AND tr.to <= '#{args[:start_to]}') 
               OR
-            (tr.from >= '#{args[:start_from]}' AND tr.from <= '#{args[:start_to}')").uniq
+            (tr.from >= '#{args[:start_from]}' AND tr.from <= '#{args[:start_to}'))").uniq
 
 
         else
