@@ -15,6 +15,7 @@ module Resolvers
         return if args.nil?
 
         if Transaction.count >= 1
+          
           Tasker.find_by_sql("SELECT taskers.id, taskers.first_name, taskers.last_name, taskers.email, taskers.lat, taskers.lng,
             taskers.image, ((ACOS(SIN(#{args[:lat].to_d} * PI() / 180)
             * SIN(taskers.lat * PI() / 180) + COS(#{args[:lat].to_d} * PI() / 180)
@@ -24,10 +25,10 @@ module Resolvers
             INNER JOIN featured_skills AS fs
             ON fs.tasker_id = taskers.id
             AND fs.service_type_id = '#{args[:service_type_id].to_i}'
-            LEFT JOIN transactions AS tr
-            ON tr.tasker_id = fs.tasker_id
-            WHERE(('#{args[:start_from]}' < tr.from AND '#{args[:start_to]}' < tr.from)
-            OR('#{args[:start_from]}' > tr.to AND '#{args[:start_to]}' > tr.to))
+            WHERE
+              NOT EXISTS (SELECT * FROM transactions AS tr WHERE tr.tasker_id = fs.tasker_id AND
+            (tr.to >= '#{args[:start_from]}' AND tr.to <= '#{args[:start_to]}' ) OR(tr.from >= '#{args[:start_from]}' AND tr.from <= '#{args[:start_t$
+            # ORDER BY distance ASC LIMIT 0,10
             HAVING distance <='20' ORDER BY distance ASC LIMIT 0,10").uniq
 
 
