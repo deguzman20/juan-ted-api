@@ -1,5 +1,5 @@
 module Mutations
-  # mutation for creating todo
+  # mutation for updating customer geolocation
   class UpdateCustomerGeolocation < BaseMutation
     description "Update customer geolocation"
     argument :customer_id, Integer, required: true

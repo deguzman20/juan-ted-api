@@ -21,6 +21,7 @@ module Types
     field :update_transaction_status_to_done, mutation: Mutations::UpdateTransactionStatusToDone
     field :update_customer_info, mutation: Mutations::UpdateCustomerInfo
     field :update_tasker_info, mutation: Mutations::UpdateTaskerInfo
+    field :update_billing_address, mutation: Mutations::UpdateBillingAddress
     field :delete_todo, mutation: Mutations::DeleteTodo
     field :gcash_grab_payment, mutation: Mutations::GcashGrab
     field :create_token, mutation: Mutations::CreateToken
