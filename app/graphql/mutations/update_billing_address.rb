@@ -2,7 +2,7 @@ module Mutations
   # mutation for updating billing address
   class UpdateBillingAddress < BaseMutation
     description "Update Billing Address"
-    argument :billing_address_id, String, required: true
+    argument :billing_address_id, ID, required: true
     argument :first_name, String, required: true
     argument :last_name, String, required: true
     argument :address_line_one, String, required: true
