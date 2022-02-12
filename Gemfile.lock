@@ -247,7 +247,8 @@ GEM
       multi_json (~> 1.0)
       xml-simple
     public_suffix (4.0.6)
-    puma (3.12.6)
+    puma (4.3.11)
+      nio4r (~> 2.0)
     racc (1.5.2)
     rack (2.2.3)
     rack-pjax (1.1.0)
@@ -453,7 +454,7 @@ DEPENDENCIES
   mysql2 (>= 0.4.4, < 0.6.0)
   paymongo
   paypal-sdk-rest
-  puma (~> 3.11)
+  puma (~> 4.3)
   rails (~> 5.2.3)
   rails_admin
   rails_admin_rollincode (~> 1.0)
