@@ -120,7 +120,7 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.12.2)
-    concurrent-ruby (1.1.8)
+    concurrent-ruby (1.1.10)
     crass (1.0.6)
     database_cleaner-active_record (2.0.0)
       activerecord (>= 5.a)
@@ -166,8 +166,8 @@ GEM
     formatador (0.2.5)
     gem_config (0.3.2)
     geocoder (1.6.5)
-    globalid (0.4.2)
-      activesupport (>= 4.2.0)
+    globalid (1.0.1)
+      activesupport (>= 5.0)
     graphiql-rails (1.7.0)
       railties
       sprockets-rails
@@ -176,7 +176,7 @@ GEM
       temple (>= 0.8.0)
       tilt
     hirb (0.7.3)
-    i18n (1.8.9)
+    i18n (1.12.0)
       concurrent-ruby (~> 1.0)
     ice_nine (0.11.2)
     image_processing (1.12.1)
@@ -224,7 +224,7 @@ GEM
     mini_magick (4.11.0)
     mini_mime (1.0.2)
     mini_portile2 (2.5.0)
-    minitest (5.14.3)
+    minitest (5.15.0)
     msgpack (1.4.2)
     multi_json (1.15.0)
     mysql2 (0.5.3)
@@ -394,7 +394,7 @@ GEM
     turbolinks (5.2.1)
       turbolinks-source (~> 5.2)
     turbolinks-source (5.2.0)
-    tzinfo (1.2.9)
+    tzinfo (1.2.10)
       thread_safe (~> 0.1)
     uglifier (4.2.0)
       execjs (>= 0.3.0, < 3)
